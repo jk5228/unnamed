@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>Unnamed</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <style>
+    	html, body {
+    		height: 100%;
+    		width: 100%;
+    	}
+    	h2 {
+	    	transition: color 0.2s ease-in-out;
+			-webkit-transition: color 0.2s ease-in-out;
+    	}
+    	img {
+    		height: 100%;
+    		width: 100%;
+    		background-size: cover;
+    		opacity: 1;
+    	}
+	    .image {
+	    	z-index: 1;
+	    	margin: 0px;
+	    	height: 100%;
+	    	width: 100%;
+	    	position: absolute;
+	    }
+	    .sidebar {
+	    	z-index: 5;
+	    	margin: 0px;
+	    	position: fixed;
+	    	background-color: white;
+	    	width: 30%;
+	    	padding-bottom: 2%;
+	    	margin-left: 3%;
+	    	min-width: 225px;
+	    }
+	    .sidebar:hover + .veil {
+	    	background-color: rgba(255,255,255,0.6);
+	    	filter: blur(3px);
+	    	-webkit-filter: blur(3px);
+	    	-moz-filter: blur(3px);
+	    }
+	    .title {
+	    	margin: 0%;
+	    	display: inherit;
+	    }
+	    .menuitem {
+	    	height: 40px;
+	    	width: 100%;
+	    	margin: 0%;
+	    	background-color: black;
+	    	display: table-cell;
+	    	vertical-align: middle;
+	    	transition: all 0.5s ease-in-out;
+	    	-webkit-transition: all 0.5s ease-in-out;
+	    	-moz-transition: all 0.5s ease-in-out;
+	    }
+	    #item1:hover h2 {
+	    	color: #F57A7A;
+	    }
+	    #item2:hover h2 {
+	    	color: #D46DED;
+	    }
+	    #item3:hover h2 {
+	    	color: #90D96F;
+	    }
+	    #item4:hover h2 {
+	    	color: #1568ED;
+	    }
+	    #item5:hover h2 {
+	    	color: #EDDE6D;
+	    }
+    </style>
+    <script type="text/javascript" src="jquery-1.9.1.min.js">
+	    $(".menuitem").hover(function () {
+	    	$(".menuitem").css("filter", "blur(10px)");
+    	});
+    </script>
+    </head>
+<body>
+	<div class="sidebar">
+		<div class="title">
+			<a href=""><h1>Unnamed</h1></a>
+		</div>
+		<a href=""><div class="menuitem" id="item1">
+			<h2>Blog</h2>
+		</div></a>
+		<a href=""><div class="menuitem" id="item2">
+			<h2>Design</h2>
+		</div></a>
+		<a href=""><div class="menuitem" id="item3">
+			<h2>Photography</h2>
+		</div></a>
+		<a href=""><div class="menuitem" id="item4">
+			<h2>About</h2>
+		</div></a>
+		<a href=""><div class="menuitem" id="item5">
+			<h2>Contact</h2>
+		</div></a>
+	</div>
+	<div class="veil">
+		<div class="image" id="img1"><img src="img1.jpg" /></div>
+	</div>
+</body>
+</html>
