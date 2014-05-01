@@ -94,14 +94,15 @@ a:hover {
 .post {
 	position: relative;
 	float: left;
-	width: 45%;
-	height: 25%;
+	width: 20em;
+	height: 20em;
 	background-size: cover;
 	background-color: #2F5F8A;
 	color: black;
 	margin: 0%;
 	padding: 0%;
-	margin-bottom: 2%;
+	margin-bottom: 2em;
+	margin-left: 2em;
 }
 	.posttitle {
 		font-size: 3em;
