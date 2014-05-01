@@ -54,6 +54,7 @@
 			width: auto;
 			min-width: 100%;
 			overflow-x: scroll;
+			ocerflow-y: hidden;
 		}
 		#post1 {
 			background-image: url('vegas.jpg');
@@ -68,6 +69,7 @@
 			background-image: url('woods.jpg');
 		}
 		#bar {
+			position: relative;
 			width: 100%;
 		}
     </style>
@@ -76,7 +78,7 @@
 	    
 	    $(document).ready( function () {
 	    	// alert("hello");
-	    	var width = $('#content1 .post').size();
+	    	var width = $('#content1 > .post').size();
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 	    });
 
@@ -99,25 +101,26 @@
 		</div>
 	</div>
 	<div class="content" id="content1">
-		<div id="bar"></div>
+		<div id="bar">
+			<h2 class="title" id="title2">Recent Posts</h2>
+			<div class="post" id="post1">
+				<div class="posttitle">Post title 1</div>
+				<div class="postdate">May 1, 2014</div>
+			</div>
+			<div class="post" id="post2">
+				<div class="posttitle">Post title 2</div>
+				<div class="postdate">May 2, 2014</div>
+			</div>
+			<div class="post" id="post3">
+				<div class="posttitle">Post title 3</div>
+				<div class="postdate">May 3, 2014</div>
+			</div>
+			<div class="post" id="post4">
+				<div class="posttitle">Post title 4</div>
+				<div class="postdate">May 4, 2014</div>
+			</div>
+		</div>
 		<p></p>
-		<h2 class="title" id="title2">Recent Posts</h2>
-		<div class="post" id="post1">
-			<div class="posttitle">Post title 1</div>
-			<div class="postdate">May 1, 2014</div>
-		</div>
-		<div class="post" id="post2">
-			<div class="posttitle">Post title 2</div>
-			<div class="postdate">May 2, 2014</div>
-		</div>
-		<div class="post" id="post3">
-			<div class="posttitle">Post title 3</div>
-			<div class="postdate">May 3, 2014</div>
-		</div>
-		<div class="post" id="post4">
-			<div class="posttitle">Post title 4</div>
-			<div class="postdate">May 4, 2014</div>
-		</div>
 	</div>
 </body>
 </html>
