@@ -40,6 +40,7 @@ a:hover {
 	width: 100%;
 	min-height: 5%;
 	background-color: black;
+	color: white;
 }
 .navbutton {
 	z-index: 10;
