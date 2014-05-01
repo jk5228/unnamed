@@ -3,7 +3,7 @@ html, body {
 	font-family: "Raleway";
 	margin: 0%;
 	padding: 0%;
-	oveflow: hidden;
+	oveflow-x: hidden;
 }
 h1 {
 	font-size: 4em;
