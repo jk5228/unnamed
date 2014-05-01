@@ -90,22 +90,21 @@
     <script type="text/javascript" src="jquery.onepage-scroll.min.js"></script>
     <script type="text/javascript">
 	    
-	    // Sets the recent posts container div to the correct width
 	    $(document).ready( function () {
+
+	    	// Sets the recent posts container div to the correct width
 	    	var width = $('#content1 .post').size();
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
-	    });
 
-	    // Scrolls the page in sections
-	    $(document).ready(function() {
-			$(".main").onepage_scroll({
+	    	// Scrolls the page in sections
+	    	$(".main").onepage_scroll({
 			   sectionContainer: "scroll-section", 
 			   easing: "ease",
 			   animationTime: 1000,
 			   pagination: true,
 			   updateURL: false
 			});
-		});
+	    });
 
     </script>
     </head>
