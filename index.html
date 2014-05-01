@@ -94,7 +94,7 @@
 	    	var width = $('#content1 .post').size();
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 
-	    	$('.menuitem a').click( function () {
+	    	$('.menuitem').click( function () {
 		    	var divPosition = $('#content1').offset();
 		    	$('html, body').animate({scrollTop: divPosition.top}, "slow");
 	    	});
