@@ -67,7 +67,15 @@
 			background-image: url('woods.jpg');
 		}
     </style>
-    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="jquery-1.9.1.min.js">
+	    
+	    $(document).ready( function () {
+	    	var width = $('#content1').filter('.post').length();
+	    	width = width * 22;
+	    	$('#content1').css('width', width + 'em');
+	    });
+
+    </script>
     </head>
 <body>
 	<div class="navbar" id="nav1">
