@@ -36,6 +36,7 @@ a:hover {
 }
 .navbar {
 	position: fixed;
+	padding-top: 2%;
 	top: 0%;
 	width: 100%;
 	min-height: 5%;
