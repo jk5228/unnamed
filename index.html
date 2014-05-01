@@ -7,7 +7,17 @@
     <link rel="shortcut icon" href="icon.png">
 
     <style>
+    	#nav1 {
+    		z-index: 0;
+    	}
+    	#nav1 .navbutton {
+    		margin: 0% 1.5% 0% 1.5%;
+			display: inline-block;
+			text-align: center;
+			float: left;
+    	}
 		#img1 {
+			z-index: 1;
 			background-image: url('img1.jpg');
 			height: 95%;
 		}
@@ -30,6 +40,11 @@
     <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
     </head>
 <body>
+	<div class="navbar" id="nav1">
+		<div class="navbutton" id="button1">Recent</div>
+		<div class="navbutton" id="button1">Archive</div>
+		<div class="navbutton" id="button1">About</div>
+	</div>
 	<div class="opening" id="img1">
 		<div class="title">
 			UNNAMED
