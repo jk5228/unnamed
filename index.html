@@ -95,6 +95,7 @@
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 
 	    	$('.menuitem').click( function () {
+	    		alert("hello");
 		    	var divPosition = $('#content1').offset();
 		    	$('html, body').animate({scrollTop: divPosition.top}, "slow");
 	    	});
