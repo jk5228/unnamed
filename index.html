@@ -70,8 +70,9 @@
     <script type="text/javascript" src="jquery-1.9.1.min.js">
 	    
 	    $(document).ready( function () {
-	    	var width = $('#content1 > .post').length();
+	    	var width = $('#content1 .post').length();
 	    	width = width * 22;
+	    	alert(width);
 	    	$('#content1').css('width', (width) + 'em').css('background-color', 'red');
 	    });
 
