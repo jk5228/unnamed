@@ -46,16 +46,9 @@ a:hover {
 .menu {
 	z-index: 5;
 	margin: 0px;
-	position: absolute;
-	left: 5%;
-	top: 50%;
-	width: 24.5%;
 }
 .menuitem {
 	height: 40px;
-	width: 30%;
-	margin: 0% 1.5% 0% 1.5%;
-	display: inline-block;
 	position: relative;
 	transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
