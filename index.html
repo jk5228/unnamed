@@ -4,6 +4,7 @@
     <title>Unnamed</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="main.css" rel="stylesheet" type="text/css" />
+    <link href="onepage-scroll.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans|Raleway:100,300,400' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="icon.png">
 
@@ -86,13 +87,25 @@
 		}
     </style>
     <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="jquery.onepage-scroll.min.js"></script>
     <script type="text/javascript">
 	    
+	    // Sets the recent posts container div to the correct width
 	    $(document).ready( function () {
-	    	// alert("hello");
 	    	var width = $('#content1 .post').size();
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 	    });
+
+	    // Scrolls the page in sections
+	    $(document).ready(function() {
+			$("body").onepage_scroll({
+			   sectionContainer: "scroll-section", 
+			   easing: "ease",
+			   animationTime: 1000,
+			   pagination: true,
+			   updateURL: false
+			});
+		});
 
     </script>
     </head>
@@ -102,45 +115,49 @@
 		<div class="navbutton" id="button1"><a href="">Archive</a></div>
 		<div class="navbutton" id="button1"><a href="">About</a></div>
 	</div>
-	<div class="opening" id="img1">
-		<div class="title" id="title1">
-			UNNAMED
-			<div class="menu" id="menu1">
-				<div class="menuitem"><a href="">Recent</a></div>
-				<div class="menuitem"><a href="">Archive</a></div>
-				<div class="menuitem"><a href="">About</a></div>
+	<div class="scroll-section">
+		<div class="opening" id="img1">
+			<div class="title" id="title1">
+				UNNAMED
+				<div class="menu" id="menu1">
+					<div class="menuitem"><a href="">Recent</a></div>
+					<div class="menuitem"><a href="">Archive</a></div>
+					<div class="menuitem"><a href="">About</a></div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="content" id="content1">
-		<p></p>
-		<h2 class="title" id="title2">Recent Posts</h2>
-		<div id="postcontainer">
-			<div id="bar">
-				<div class="post">
-					<div class="posttitle">Post title 1</div>
-					<div class="postdate">May 1, 2014</div>
-					<div class="postimg" id="post1"></div>
-				</div>
-				<div class="post">
-					<div class="posttitle">Post title 2</div>
-					<div class="postdate">May 2, 2014</div>
-					<div class="postimg" id="post2"></div>
-				</div>
-				<div class="post">
-					<div class="posttitle">Post title 3</div>
-					<div class="postdate">May 3, 2014</div>
-					<div class="postimg" id="post3"></div>
-				</div>
-				<div class="post">
-					<div class="posttitle">Post title 4</div>
-					<div class="postdate">May 4, 2014</div>
-					<div class="postimg" id="post4"></div>
-				</div>
-				<div class="post">
-					<div class="posttitle">Post title 5</div>
-					<div class="postdate">May 5, 2014</div>
-					<div class="postimg" id="post5"></div>
+	<div class="scroll-section">
+		<div class="content" id="content1">
+			<p></p>
+			<h2 class="title" id="title2">Recent Posts</h2>
+			<div id="postcontainer">
+				<div id="bar">
+					<div class="post">
+						<div class="posttitle">Post title 1</div>
+						<div class="postdate">May 1, 2014</div>
+						<div class="postimg" id="post1"></div>
+					</div>
+					<div class="post">
+						<div class="posttitle">Post title 2</div>
+						<div class="postdate">May 2, 2014</div>
+						<div class="postimg" id="post2"></div>
+					</div>
+					<div class="post">
+						<div class="posttitle">Post title 3</div>
+						<div class="postdate">May 3, 2014</div>
+						<div class="postimg" id="post3"></div>
+					</div>
+					<div class="post">
+						<div class="posttitle">Post title 4</div>
+						<div class="postdate">May 4, 2014</div>
+						<div class="postimg" id="post4"></div>
+					</div>
+					<div class="post">
+						<div class="posttitle">Post title 5</div>
+						<div class="postdate">May 5, 2014</div>
+						<div class="postimg" id="post5"></div>
+					</div>
 				</div>
 			</div>
 		</div>
