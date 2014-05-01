@@ -96,11 +96,9 @@ a:hover {
 .post {
 	position: relative;
 	float: left;
-	width: 20em;
-	height: 20em;
 	background-size: cover;
 	background-color: #2F5F8A;
-	color: black;
+	color: white;
 	margin: 0%;
 	padding: 0%;
 	margin-bottom: 2em;
@@ -121,6 +119,12 @@ a:hover {
 		position: relative;
 		margin-left: 5%;
 		margin-top: 1%;
+		float: left;
+		clear: both;
+	}
+	.postimg {
+		width: 20em;
+		height: 20em;
 		float: left;
 		clear: both;
 	}
