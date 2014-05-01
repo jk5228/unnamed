@@ -67,6 +67,9 @@
 		#post4 {
 			background-image: url('woods.jpg');
 		}
+		#bar {
+			width: 100%;
+		}
     </style>
     <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
@@ -74,7 +77,7 @@
 	    $(document).ready( function () {
 	    	// alert("hello");
 	    	var width = $('#content1 .post').size();
-	    	$('#content1').css('width', (width * 22 + 2) + 'em');
+	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 	    });
 
     </script>
@@ -96,6 +99,7 @@
 		</div>
 	</div>
 	<div class="content" id="content1">
+		<div id="bar"></div>
 		<p></p>
 		<h2 class="title" id="title2">Recent Posts</h2>
 		<div class="post" id="post1">
