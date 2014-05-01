@@ -107,14 +107,18 @@ a:hover {
 	.posttitle {
 		font-size: 3em;
 		font-weight: 300;
-		position: absolute;
-		top: 40%;
-		left: 5%;
+		position: relative;
+		margin-left: 5%;
+		margin-top: 10%;
+		float: left;
+		clear: both;
 	}
 	.postdate {
 		font-size: 1em;
 		font-weight: 200;
-		position: absolute;
-		top: 50%;
-		left: 5%;
+		position: relative;
+		margin-left: 5%;
+		margin-top: 5%;
+		float: left;
+		clear: both;
 	}
