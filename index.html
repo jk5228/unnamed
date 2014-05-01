@@ -97,22 +97,20 @@
 	    }
     </style>
     <script type="text/javascript" src="jquery-1.9.1.min.js">
-	    $(".menuitem").hover(function () {
-	    	$(".menuitem").css("filter", "blur(10px)");
-    	});
 
     	$(document).ready( function() {
-		$(window).scroll(function(e){
-		  parallax();
-		});
+			
+			$(window).scroll(function(e){
+			  parallax();
+			});
 
-		function parallax(){
-		  var scrolled = $(document).scrollTop();
-		  $('.opening').css('background-position-x',-(scrolled*0.4)+'px');
-		  $('#filter').css('opacity',(scrolled*0.004+0.4));
-		  $(document).alert("hello");
-		}
-	});
+			function parallax(){
+			  var scrolled = $(document).scrollTop();
+			  $('.opening').css('background-position-x',-(scrolled*0.4)+'px');
+			  // $('#filter').css('opacity',(scrolled*0.004+0.4));
+			}
+		});
+		
     </script>
     </head>
 <body>
