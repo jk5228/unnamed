@@ -23,9 +23,18 @@
 			background-image: url('img1.jpg');
 			height: 95%;
 		}
-		/*#content1 {
-			height: 5%;
-		}*/
+		#title1 {
+			width: 95%;
+			position: absolute;
+			top: 35%;
+			text-align: left;
+			margin-left: 5%;
+		}
+		#title2 {
+			position: absolute;
+			text-align: left;
+			margin-left: 5%;
+		}
 		#menu1 {
 			position: absolute;
 			left: 5%;
@@ -51,7 +60,7 @@
 		<div class="navbutton" id="button1">About</div>
 	</div>
 	<div class="opening" id="img1">
-		<div class="title">
+		<div class="title" id="title1">
 			UNNAMED
 		</div>
 		<div class="menu" id="menu1">
@@ -62,7 +71,7 @@
 	</div>
 	<div class="content" id="content1">
 		<p></p>
-		<h2>Recent Posts</h2>
+		<h2 class="title" id="title2">Recent Posts</h2>
 		<div class="post" id="post1">
 			<div class="posttitle">Post title 1</div>
 			<div class="postdate">May 1, 2014</div>
