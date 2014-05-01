@@ -93,7 +93,8 @@ a:hover {
 	}
 .post {
 	position: relative;
-	width: 100%;
+	float: left;
+	width: 45%;
 	height: 25%;
 	background-size: cover;
 	background-color: #2F5F8A;
