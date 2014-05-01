@@ -96,8 +96,6 @@ a:hover {
 .post {
 	position: relative;
 	float: left;
-	background-size: cover;
-	background-color: #2F5F8A;
 	color: white;
 	margin: 0%;
 	padding: 0%;
@@ -127,4 +125,6 @@ a:hover {
 		height: 20em;
 		float: left;
 		clear: both;
+		background-size: cover;
+		background-color: #2F5F8A;
 	}
