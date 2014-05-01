@@ -5,6 +5,14 @@ html, body {
 	margin: 0%;
 	padding: 0%;
 }
+h1 {
+	font-size: 4em;
+	font-weight: 100;
+}
+p {
+	font-size: 1em;
+	font-weight: 100;
+}
 a {
 	color: inherit;
 	text-decoration: none;
