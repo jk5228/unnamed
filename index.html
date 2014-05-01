@@ -96,11 +96,21 @@
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 	    });
 
+	    document.getElementById("#content1").scrollIntoView();
+
+	 	// $.fn.scrollView = function () {
+		//     return this.each(function () {
+		//         $('html, body').animate({
+		//             scrollTop: $(this).offset().top
+		//         }, 1000);
+		//     });
+		// }
+
     </script>
     </head>
 <body>
 	<div class="navbar" id="nav1">
-		<div class="navbutton" id="button1"><a href="#content1" title="$.scrollTo( '#content1', 800, {easing:'ease-in-out'} );">Recent</a></div>
+		<div class="navbutton" id="button1"><a href="#content1">Recent</a></div>
 		<div class="navbutton" id="button1"><a href="">Archive</a></div>
 		<div class="navbutton" id="button1"><a href="">About</a></div>
 	</div>
@@ -108,7 +118,7 @@
 		<div class="title" id="title1">
 			UNNAMED
 			<div class="menu" id="menu1">
-				<div class="menuitem"><a href="#content1" title="$.scrollTo( '#content1', 800, {easing:'ease-in-out'} );">Recent</a></div>
+				<div class="menuitem"><a href="#content1">Recent</a></div>
 				<div class="menuitem"><a href="">Archive</a></div>
 				<div class="menuitem"><a href="">About</a></div>
 			</div>
