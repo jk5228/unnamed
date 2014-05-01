@@ -91,26 +91,20 @@
     <script type="text/javascript">
 	    
 	    $(document).ready( function () {
-	    	// alert("hello");
 	    	var width = $('#content1 .post').size();
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
+
+	    	$('.menuitem a').click( function () {
+		    	var divPosition = $('#content1').offset();
+		    	$('html, body').animate({scrollTop: divPosition.top}, "slow");
+	    	});
 	    });
-
-	    document.getElementById("#content1").scrollIntoView();
-
-	 	// $.fn.scrollView = function () {
-		//     return this.each(function () {
-		//         $('html, body').animate({
-		//             scrollTop: $(this).offset().top
-		//         }, 1000);
-		//     });
-		// }
 
     </script>
     </head>
 <body>
 	<div class="navbar" id="nav1">
-		<div class="navbutton" id="button1"><a href="#content1">Recent</a></div>
+		<div class="navbutton" id="button1"><a href="">Recent</a></div>
 		<div class="navbutton" id="button1"><a href="">Archive</a></div>
 		<div class="navbutton" id="button1"><a href="">About</a></div>
 	</div>
