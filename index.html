@@ -8,6 +8,9 @@
     <link rel="shortcut icon" href="icon.png">
 
     <style>
+    	html, body {
+    		overflow-y: hidden;
+    	}
     	#nav1 {
     		z-index: 1;
     		/*background-color: #303B45;*/
@@ -113,6 +116,7 @@
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 
 	    	$('a[href*=#]:not([href=#])').click(function() {
+	    		$('html,body').css('overflow-y','scroll');
 			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			      var target = $(this.hash);
 			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -123,6 +127,7 @@
 			        return false;
 			      }
 			    }
+			  $('html,body').css('overflow-y','hidden');
 			  });
 	    });
 
