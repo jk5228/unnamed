@@ -99,6 +99,14 @@
 			background-image: url('imgs/vegas.jpg');
 			background-attachment: cover;
 		}
+		#about-filter {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			-moz-filter: blur(2px) grayscale (.5) opacity(0.8);
+			-webkit-filter: blur(2px) grayscale (.5) opacity(0.8);
+			filter: blur(2px) grayscale (.5) opacity(0.8);
+		}
     </style>
 
     <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
@@ -231,6 +239,7 @@
 		<h2 class="title" id="title3">Archive</h2>
 	</div>
 	<div class="content" id="about-div">
+		<div id="about-filter"></div>
 		<p></p>
 		<h2 class="title" id="title4">About</h2>
 		<p>
