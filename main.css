@@ -92,9 +92,10 @@ a:hover {
 	}
 .article {
 	position: relative;
-	margin-left: 30%;
+	margin-left: 20%;
 	width: 40%;
 	height: initial;
+	line-height: 2em;
 }
 #article-div {
 	width: auto;
