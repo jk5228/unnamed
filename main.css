@@ -62,6 +62,7 @@ a:hover {
 	#poem-img {
 		position: fixed;
 		z-index: 0;
+		left: 30%;
 		width: 70%;
 		height: 100%;
 	}
