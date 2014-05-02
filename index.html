@@ -93,26 +93,22 @@
 	    $(document).ready( function () {
 	    	var width = $('#content1 .post').size();
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
-
-	    	// $('.menuitem').click( function () {
-		    // 	var divPosition = $('#content1').offset();
-		    // 	$('html, body').animate({scrollTop: divPosition.top}, "slow");
-	    	// });
 	    });
 
 	    $(function() {
-			$('a[href*=#]:not([href=#])').click(function() {
-				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-				    var target = $(this.hash);
-				    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-				    if (target.length) {
-		        		$('html,body').animate({
-		        			scrollTop: target.offset().top
-		        		}, 1000);
-		        		return false;
-		      		}
-		    	}
-			});
+		  $('a[href*=#]:not([href=#])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		        return false;
+		      }
+		    }
+		  });
 		});
 
     </script>
