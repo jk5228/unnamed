@@ -91,6 +91,12 @@ a:hover {
 		min-height: 2%;
 		margin: 0% 5% 2% 5%;
 	}
+.article {
+	position: relative;
+	margin-left: 30%;
+	width: 40%;
+	height: initial;
+}
 .post {
 	position: relative;
 	float: left;
