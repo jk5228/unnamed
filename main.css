@@ -55,6 +55,10 @@ a:hover {
 	background-size: cover;
 	background-attachment:fixed;
 }
+	#article-img {
+		z-index: 0;
+		height: 95%;
+	}
 .menu {
 	z-index: 5;
 	margin: 0px;
@@ -97,10 +101,6 @@ a:hover {
 	height: initial;
 	line-height: 2em;
 }
-	/*.article p {
-		font-family: garamond, georgia, sans-serif;
-		letter-spacing: 0.05em;
-	}*/
 	.article p:not(:nth-of-type(2)) {
 		font-family: garamond, georgia, sans-serif;
 		letter-spacing: 0.05em;
