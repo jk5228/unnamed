@@ -8,9 +8,6 @@
     <link rel="shortcut icon" href="icon.png">
 
     <style>
-    	html, body {
-    		overflow-y: hidden;
-    	}
     	#nav1 {
     		z-index: 1;
     		/*background-color: #303B45;*/
@@ -118,7 +115,7 @@
 	    	$('body').bind('touchmove', function(e){
 			  e.preventDefault();
 			});
-	    	
+
 	    	$('a[href*=#]:not([href=#])').click(function() {
 	    		// $('html,body').css('overflow-y','scroll');
 			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
