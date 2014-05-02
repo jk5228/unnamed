@@ -112,8 +112,8 @@
 	    	var width = $('#recent-div .post').size();
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 
-	    	$('html, body').bind('touchmove', function(e){
-			  e.preventDefault();
+	    	$('html, body').addEventListener('touchmove', function(e) {
+  				e.preventDefault();
 			});
 
 	    	$('a[href*=#]:not([href=#])').click(function() {
