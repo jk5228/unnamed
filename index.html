@@ -107,8 +107,11 @@
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 
 	    	$('body, html').on({
-			'mousewheel': function(e) {
+			'mousewheel': function(e, delta) {
 			    if (e.target.id == 'el') return;
+			    	this.scrollLeft -= (delta * 30);
+			    	return;
+			   	});
 			    e.preventDefault();
 			    e.stopPropagation();
 			    }
