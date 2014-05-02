@@ -124,9 +124,7 @@
 			    $(window).scroll(function () {
 			        var scroll_position = $(window).scrollTop();
 			        var object_position_left = window_width * (scroll_position / document_height);
-			        $('#postcontainer').css({
-			            'left': object_position_left
-			        });
+			        $('#postcontainer').scrollLeft(object_position_left);
 			    });
 			});
 
