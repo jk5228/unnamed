@@ -59,6 +59,12 @@ a:hover {
 		z-index: 0;
 		height: 95%;
 	}
+	#poem-img {
+		position: fixed;
+		z-index: 0;
+		width: 70%;
+		height: 100%;
+	}
 .menu {
 	z-index: 5;
 	margin: 0px;
@@ -105,9 +111,25 @@ a:hover {
 		font-family: garamond, georgia, sans-serif;
 		letter-spacing: 0.05em;
 	}
+.poem {
+	position: relative;
+	margin-left: 10%;
+	width: 80%;
+	height: initial;
+	line-height: 2em;
+}
+	.poem p:not(:nth-of-type(2)) {
+		font-family: garamond, georgia, sans-serif;
+		letter-spacing: 0.05em;
+	}
 #article-div {
 	width: auto;
 	min-width: 100%;
+	height: initial;
+	background-color: #161717;
+}
+#poem-div {
+	width: 30%;
 	height: initial;
 	background-color: #161717;
 }
