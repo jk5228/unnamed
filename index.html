@@ -34,7 +34,7 @@
 			text-align: left;
 			margin-left: 5%;
 		}
-		#title2, #title3 {
+		#title2, #title3, #title4 {
 			position: relative;
 			text-align: left;
 			clear: both;
@@ -91,6 +91,10 @@
 			width: auto;
 			min-width: 100%;
 		}
+		#about-div {
+			width: auto;
+			min-width: 100%;
+		}
     </style>
 
     <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
@@ -120,8 +124,8 @@
 <body>
 	<div class="navbar" id="nav1">
 		<div class="navbutton" id="button1"><a href="#recent-div">Recent</a></div>
-		<div class="navbutton" id="button2"><a>Archive</a href="archive-div"></div>
-		<div class="navbutton" id="button3"><a>About</a></div>
+		<div class="navbutton" id="button2"><a>Archive</a href="#archive-div"></div>
+		<div class="navbutton" id="button3"><a>About</a href="#about-div"></div>
 		<div class="navbutton" id="button4"><a href="#img1">Top</a></div>
 	</div>
 	<div class="opening" id="img1">
@@ -130,7 +134,7 @@
 			<div class="menu" id="menu1">
 				<div class="menuitem"><a href="#recent-div">Recent</a></div>
 				<div class="menuitem"><a href="#archive-div">Archive</a></div>
-				<div class="menuitem"><a href="#recent-div">About</a></div>
+				<div class="menuitem"><a href="#about-div">About</a></div>
 			</div>
 		</div>
 	</div>
@@ -170,6 +174,10 @@
 	<div class="content" id="archive-div">
 		<p></p>
 		<h2 class="title" id="title3">Archive</h2>
+	</div>
+	<div class="content" id="about-div">
+		<p></p>
+		<h2 class="title" id="title4">About</h2>
 	</div>
 </body>
 </html>
