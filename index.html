@@ -115,8 +115,12 @@
 	    	var width = $('#recent-div .post').size();
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 
+	    	$('body').bind('touchmove', function(e){
+			  e.preventDefault();
+			});
+	    	
 	    	$('a[href*=#]:not([href=#])').click(function() {
-	    		$('html,body').css('overflow-y','scroll');
+	    		// $('html,body').css('overflow-y','scroll');
 			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			      var target = $(this.hash);
 			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
