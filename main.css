@@ -39,7 +39,7 @@ a:hover {
 	top: 0%;
 	width: 100%;
 	min-height: 5%;
-	background-color: #161717;
+	background-color: rgba(0,0,0,0.7);
 	color: white;
 }
 .navbutton {
