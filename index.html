@@ -79,7 +79,7 @@
 			overflow-y: hidden;
 			padding-bottom: 2%;
 		}
-		#postcontainer::-webkit-scrollbar { 
+		::-webkit-scrollbar { 
 		    display: none; 
 		}
 		#bar {
@@ -125,15 +125,7 @@
 
 			$(document).keydown(disableArrowKeys);
 
-			// $('*').keypress(function(e){
-			//     if(e.which === 13 || e.which === 33 || e.which === 34 || e.which === 38 || e.which === 40){
-			//         e.preventDefault();
-			//     	e.stopPropagation();
-			//     }
-			// });
-
 	    	$('a[href*=#]:not([href=#])').click(function() {
-	    		// $('html,body').css('overflow-y','scroll');
 			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			      var target = $(this.hash);
 			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
