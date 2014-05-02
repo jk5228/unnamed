@@ -104,9 +104,12 @@
     <script type="text/javascript">
 	    
 	    $(document).ready( function () {
+
+	    	// Sets postcontainer width to fit recent posts
 	    	var width = $('#recent-div .post').size();
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 
+	    	// Prevents mouse scrolling
 	    	$('body, html').on({
 			'mousewheel': function(e, delta) {
 			    if (e.target.id == 'el') return;
@@ -129,6 +132,7 @@
 			//     });
 			// });
 
+			// Disables arrow, return, and page up/down key presses
 			var ar = new Array(13, 33, 34, 38, 40);
 			var disableArrowKeys = function(e) {
 			    if ($.inArray(e.keyCode, ar)>=0) {
@@ -136,6 +140,34 @@
 			        e.stopPropagation();
 			    }
 			}
+
+			// Scrolls recent posts based on mouse position
+			$(function(){
+
+			    var $bl    = $("#postcontainer"),
+			        $th    = $(".post"),
+			        blW    = $bl.outerWidth(),
+			        blSW   = $bl[0].scrollWidth,
+			        wDiff  = (blSW/blW)-1,  // widths difference ratio
+			        mPadd  = 60,  // Mousemove Padding
+			        damp   = 20,  // Mousemove response softness
+			        mX     = 0,   // Real mouse position
+			        mX2    = 0,   // Modified mouse position
+			        posX   = 0,
+			        mmAA   = blW-(mPadd*2), // The mousemove available area
+			        mmAAr  = (blW/mmAA);    // get available mousemove fidderence ratio
+
+			    $bl.mousemove(function(e) {
+			        mX = e.pageX - this.offsetLeft;
+			        mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
+			    });
+
+			    setInterval(function(){
+			        posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"    
+			        $th.css({marginLeft: -posX*wDiff });
+			    }, 10);
+
+			});
 
 			$(document).keydown(disableArrowKeys);
 
