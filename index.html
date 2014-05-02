@@ -109,7 +109,8 @@
 	    	$('body, html').on({
 			'mousewheel': function(e, delta) {
 			    if (e.target.id == 'el') return;
-      			$('#postcontainer').scrollLeft -= (delta * 30);
+      			var scrolled = $('#postcontainer').scrollLeft();
+      			$('#postcontainer').scrollLeft(scrolled - delta);
 			    e.preventDefault();
 			    e.stopPropagation();
 			    }
