@@ -121,9 +121,9 @@
 	    	var width = $('#recent-div .post').size();
 	    	$('#bar1').css('width', (width * 22 + 2) + 'em');
 
-	    	// // Sets archivecontainer width to fit archived posts
-	    	// var width = $('#archive-div .year').size();
-	    	// $('#bar2').css('width', (width * 17 + 2) + 'em');
+	    	// Sets archivecontainer width to fit archived posts
+	    	var width = $('#archive-div .year').size();
+	    	$('#bar2').css('width', (width * 17 + 2) + 'em');
 
 	    	// Prevents mouse scrolling
 	    	$('body, html').on({
@@ -240,7 +240,7 @@
 		<p></p>
 		<h2 class="title" id="title2">Recent Posts</h2>
 		<div id="postcontainer">
-			<div id="bar">
+			<div id="bar1">
 				<div class="post">
 					<div class="postdate">May 2, 2014</div>
 					<a href="posts/002-cleaning"><div class="postimg" id="post1"></div></a>
