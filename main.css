@@ -110,7 +110,7 @@ a:hover {
 }
 	.article p:not(:nth-of-type(2)) {
 		font-family: garamond, georgia, sans-serif;
-		font-size: 1.5em;
+		font-size: 1.2em;
 		letter-spacing: 0.05em;
 		margin-bottom: 0.5em;
 	}
@@ -123,7 +123,7 @@ a:hover {
 }
 	.poem p:not(:nth-of-type(1)) {
 		font-family: garamond, georgia, sans-serif;
-		font-size: 1.5em;
+		font-size: 1.2em;
 		letter-spacing: 0.05em;
 		margin-bottom: 0.5em;
 	}
