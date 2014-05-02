@@ -98,7 +98,8 @@ a:hover {
 	line-height: 2em;
 }
 	.article p {
-		font-family: georgia;
+		font-family: garamond, georgia, sans-serif;
+		letter-spacing: 0.05em;
 	}
 #article-div {
 	width: auto;
