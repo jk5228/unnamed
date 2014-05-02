@@ -189,3 +189,12 @@ a:hover {
 	margin-bottom: 2em;
 	margin-left: 2em;
 }
+.year h2 {
+	margin-left: 5%;
+}
+.year h3 {
+	margin-left: 10%;
+}
+.year p {
+	margin-left: 15%;
+}
