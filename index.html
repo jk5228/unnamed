@@ -140,25 +140,25 @@
 	    	var width = $('#archive-div .year').size();
 	    	$('#bar2').css('width', (width * 17 + 2) + 'em');
 
-	    	// Prevents mouse scrolling
-	    	$('body, html').on({
-			'mousewheel': function(e, delta) {
-			    if (e.target.id == 'el') return;
-      			var scrolled = $('#postcontainer').scrollLeft();
-      			$('#postcontainer').scrollLeft(scrolled - delta);
-			    e.preventDefault();
-			    e.stopPropagation();
-			    }
-			});
+	  //   	// Prevents mouse scrolling
+	  //   	$('body, html').on({
+			// 'mousewheel': function(e, delta) {
+			//     if (e.target.id == 'el') return;
+   //    			var scrolled = $('#postcontainer').scrollLeft();
+   //    			$('#postcontainer').scrollLeft(scrolled - delta);
+			//     e.preventDefault();
+			//     e.stopPropagation();
+			//     }
+			// });
 
-			// Disables arrow, return, and page up/down key presses
-			var ar = new Array(13, 33, 34, 38, 40);
-			var disableArrowKeys = function(e) {
-			    if ($.inArray(e.keyCode, ar)>=0) {
-			        e.preventDefault();
-			        e.stopPropagation();
-			    }
-			}
+			// // Disables arrow, return, and page up/down key presses
+			// var ar = new Array(13, 33, 34, 38, 40);
+			// var disableArrowKeys = function(e) {
+			//     if ($.inArray(e.keyCode, ar)>=0) {
+			//         e.preventDefault();
+			//         e.stopPropagation();
+			//     }
+			// }
 
 			// Scrolls recent posts based on mouse position
 			$(function(){
@@ -216,20 +216,20 @@
 
 			});
 
-			$(document).keydown(disableArrowKeys);
+			// $(document).keydown(disableArrowKeys);
 
-	    	$('a[href*=#]:not([href=#])').click(function() {
-			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			      var target = $(this.hash);
-			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			      if (target.length) {
-			        $('html,body').animate({
-			          scrollTop: target.offset().top
-			        }, 1000);
-			        return false;
-			      }
-			    }
-			  });
+	  //   	$('a[href*=#]:not([href=#])').click(function() {
+			//     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			//       var target = $(this.hash);
+			//       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			//       if (target.length) {
+			//         $('html,body').animate({
+			//           scrollTop: target.offset().top
+			//         }, 1000);
+			//         return false;
+			//       }
+			//     }
+			//   });
 	    });
 
     </script>
