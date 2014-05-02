@@ -117,7 +117,8 @@
 
 			$('*').keypress(function(e){
 			    if(e.which === 13 || e.which === 33 || e.which === 34 || e.which === 38 || e.which === 40){
-			        return false;
+			        e.preventDefault();
+			    	e.stopPropagation();
 			    }
 			});
 
