@@ -96,6 +96,12 @@ a:hover {
 	width: 40%;
 	height: initial;
 }
+#article-div {
+	width: auto;
+	min-width: 100%;
+	height: initial;
+	background-color: #161717;
+}
 .post {
 	position: relative;
 	float: left;
