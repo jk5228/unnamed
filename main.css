@@ -101,7 +101,7 @@ a:hover {
 		font-family: garamond, georgia, sans-serif;
 		letter-spacing: 0.05em;
 	}
-	.article:not(p:first-of-type) {
+	.article p:not(:first-of-type) {
 		font-family: garamond, georgia, sans-serif;
 		letter-spacing: 0.05em;
 	}
