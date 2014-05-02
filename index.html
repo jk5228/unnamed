@@ -83,7 +83,12 @@
 		::-webkit-scrollbar { 
 		    display: none; 
 		}
-		#bar {
+		#bar1 {
+			position: relative;
+			width: 100%;
+			padding-bottom: 10%;
+		}
+		#bar2 {
 			position: relative;
 			width: 100%;
 			padding-bottom: 10%;
@@ -92,6 +97,13 @@
 			width: auto;
 			min-width: 100%;
 			background-color: #E1E5E8;
+		}
+		#archivecontainer {
+			position: relative;
+			width: 100%;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			padding-bottom: 2%;
 		}
 		#about-div {
 			width: auto;
@@ -107,7 +119,11 @@
 
 	    	// Sets postcontainer width to fit recent posts
 	    	var width = $('#recent-div .post').size();
-	    	$('#bar').css('width', (width * 22 + 2) + 'em');
+	    	$('#bar1').css('width', (width * 22 + 2) + 'em');
+
+	    	// Sets archivecontainer width to fit archived posts
+	    	var width = $('#archive-div .year').size();
+	    	$('#bar2').css('width', (width * 17 + 2) + 'em');
 
 	    	// Prevents mouse scrolling
 	    	$('body, html').on({
@@ -134,6 +150,34 @@
 
 			    var $bl    = $("#postcontainer"),
 			        $th    = $(".post"),
+			        blW    = $bl.outerWidth(),
+			        blSW   = $bl[0].scrollWidth,
+			        wDiff  = (blSW/blW)-1,  // widths difference ratio
+			        mPadd  = 60,  // Mousemove Padding
+			        damp   = 20,  // Mousemove response softness
+			        mX     = 20,   // Real mouse position
+			        mX2    = 0,   // Modified mouse position
+			        posX   = 0,
+			        mmAA   = blW-(mPadd*2), // The mousemove available area
+			        mmAAr  = (blW/mmAA);    // get available mousemove fidderence ratio
+
+			    $bl.mousemove(function(e) {
+			        mX = e.pageX - this.offsetLeft;
+			        mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
+			    });
+
+			    setInterval(function(){
+			        posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"    
+			        $bl.scrollLeft(posX*wDiff);
+			    }, 10);
+
+			});
+
+			// Scrolls archived posts based on mouse position
+			$(function(){
+
+			    var $bl    = $("#archivecontainer"),
+			        $th    = $(".year"),
 			        blW    = $bl.outerWidth(),
 			        blSW   = $bl[0].scrollWidth,
 			        wDiff  = (blSW/blW)-1,  // widths difference ratio
@@ -228,6 +272,15 @@
 	<div class="content" id="archive-div">
 		<p></p>
 		<h2 class="title" id="title3">Archive</h2>
+		<div id="archivecontainer">
+			<div id="bar2">
+				<div class="year">
+					<div class="month">
+						<div class="headline">Hello</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="content" id="about-div">
 		<p></p>

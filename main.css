@@ -179,3 +179,13 @@ a:hover {
 	width: 100%;
 	height: 10em;
 }
+.year {
+	position: relative;
+	width: 15em;
+	float: left;
+	color: black;
+	margin: 0%;
+	padding: 0%;
+	margin-bottom: 2em;
+	margin-left: 2em;
+}
