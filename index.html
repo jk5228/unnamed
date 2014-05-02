@@ -94,11 +94,19 @@
 	    	var width = $('#content1 .post').size();
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 
-	    	$('.menuitem').click( function () {
-	    		alert("hello");
-		    	var divPosition = $('#content1').offset();
-		    	$('html, body').animate({scrollTop: divPosition.top}, "slow");
-	    	});
+	    	$(function(){
+			  $('a[href^=#]').click(function(e){
+			    var name = $(this).attr('href').substr(1);
+			    var pos = $('a[name='+name+']').offset();
+			    $('body').animate({ scrollTop: pos.top });
+			    e.preventDefault();
+			  });
+			});
+
+	    	// $('.menuitem').click( function () {
+		    // 	var divPosition = $('#content1').offset();
+		    // 	$('html, body').animate({scrollTop: divPosition.top}, "slow");
+	    	// });
 	    });
 
     </script>
@@ -113,7 +121,7 @@
 		<div class="title" id="title1">
 			UNNAMED
 			<div class="menu" id="menu1">
-				<div class="menuitem"><a>Recent</a></div>
+				<div class="menuitem"><a href="#content">Recent</a></div>
 				<div class="menuitem"><a>Archive</a></div>
 				<div class="menuitem"><a>About</a></div>
 			</div>
