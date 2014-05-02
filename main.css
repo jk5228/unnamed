@@ -97,10 +97,10 @@ a:hover {
 	height: initial;
 	line-height: 2em;
 }
-	.article p {
+	/*.article p {
 		font-family: garamond, georgia, sans-serif;
 		letter-spacing: 0.05em;
-	}
+	}*/
 	.article p:not(:first-of-type) {
 		font-family: garamond, georgia, sans-serif;
 		letter-spacing: 0.05em;
