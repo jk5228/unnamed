@@ -112,7 +112,7 @@
 	    	var width = $('#recent-div .post').size();
 	    	$('#bar').css('width', (width * 22 + 2) + 'em');
 
-	    	$('body').bind('touchmove', function(e){
+	    	$('html, body').bind('touchmove', function(e){
 			  e.preventDefault();
 			});
 
@@ -128,7 +128,6 @@
 			        return false;
 			      }
 			    }
-			  // $('html,body').css('overflow-y','hidden');
 			  });
 	    });
 
