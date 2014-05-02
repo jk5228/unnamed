@@ -164,7 +164,7 @@
 
 			    setInterval(function(){
 			        posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"    
-			        $th.css({marginLeft: -posX*wDiff });
+			        $bl.scrollLeft(-posX*wDiff);
 			    }, 10);
 
 			});
