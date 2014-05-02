@@ -122,6 +122,7 @@ a:hover {
 	.poem p:not(:nth-of-type(2)) {
 		font-family: garamond, georgia, sans-serif;
 		letter-spacing: 0.05em;
+		margin-bottom: 0.5em;
 	}
 #article-div {
 	width: auto;
