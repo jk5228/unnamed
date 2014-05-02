@@ -8,6 +8,9 @@
     <link rel="shortcut icon" href="icon.png">
 
     <style>
+    	html, body {
+    		overflow: hidden;
+    	}
     	#nav1 {
     		z-index: 1;
     		/*background-color: #303B45;*/
@@ -117,9 +120,9 @@
 			      var target = $(this.hash);
 			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 			      if (target.length) {
-			        $('html,body').animate({
+			        $('html,body').css('overflow-y','scroll').animate({
 			          scrollTop: target.offset().top
-			        }, 1000);
+			        }, 1000).css('overflow-y','hidden');
 			        return false;
 			      }
 			    }
