@@ -85,7 +85,7 @@ a:hover {
 	color: white;
 	margin: 0%;
 }
-	.content p {
+	.content:not(p:first-of-type) {
 		width: 90%;
 		min-height: 2%;
 		margin: 0% 5% 2% 5%;
@@ -97,6 +97,10 @@ a:hover {
 	height: initial;
 	line-height: 2em;
 }
+	.article p {
+		font-family: garamond, georgia, sans-serif;
+		letter-spacing: 0.05em;
+	}
 	.article p {
 		font-family: garamond, georgia, sans-serif;
 		letter-spacing: 0.05em;
