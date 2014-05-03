@@ -45,16 +45,18 @@
 
     <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
+
     	$(document).ready( function() {
 			$(window).scroll(function(e){
-			  parallax();
+				parallax();
 			});
 			alert("hello");
 			function parallax(){
-			  var scrolled = $(document).scrollTop();
-			  $('.opening').css('background-position-y',-(scrolled)+'px');
+				var scrolled = $(document).scrollTop();
+				$('.opening').css('background-position-y',-(scrolled)+'px');
 			}
 		});
+
     </script>
 </head>
 <body>
