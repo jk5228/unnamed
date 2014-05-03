@@ -48,9 +48,8 @@
     	$(document).ready( function() {
 			$(window).scroll(function(e){
 			  parallax();
-			  alert("hello");
 			});
-
+			alert("hello");
 			function parallax(){
 			  var scrolled = $(document).scrollTop();
 			  $('.opening').css('background-position-y',-(scrolled)+'px');
