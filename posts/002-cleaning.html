@@ -47,10 +47,11 @@
     <script type="text/javascript">
 
     	$(document).ready( function() {
+			alert("hello");
 			$(window).scroll(function(e){
 				parallax();
 			});
-			alert("hello");
+			
 			function parallax(){
 				var scrolled = $(document).scrollTop();
 				$('.opening').css('background-position-y',-(scrolled)+'px');
