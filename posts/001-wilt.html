@@ -44,7 +44,18 @@
     </style>
 
     <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+    	$(document).ready( function() {
+			$(window).scroll(function(e){
+			  parallax();
+			});
+
+			function parallax(){
+			  var scrolled = $(document).scrollTop();
+			  $('#article-img').css('background-position-y',-(scrolled*0.2)+'px');
+			}
+		});
+    </script>
 </head>
 <body>
 	<div class="navbar" id="nav1">
