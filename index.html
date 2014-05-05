@@ -326,21 +326,8 @@
 
 					<!-- Create link to current post preceded by day of post-->
 					{% capture day %}{{ post.date | date: '%d' }}{% endcapture %}
-					{% capture last %}{{ day | truncate:(day.size-1): }}{% endcapture %}
 
-					<!-- Get correct ordinal ending for given day -->
-					{% case last %}
-						{% when 1 %}
-							{% capture ordinal %}st{% endcapture %}
-						{% when 2 %}
-							{% capture ordinal %}nd{% endcapture %}
-						{% when 3 %}
-							{% capture ordinal %}rd{% endcapture %}
-						{% else %}
-							{% capture ordinal %}th{% endcapture %}
-					{% endcase %}
-
-					<div class="headline">{{ day }}{{ last }} <a href="{{ post.url }}">{{ post.title }}</a></div>
+					<div class="headline">{{ day }} <a href="{{ post.url }}">{{ post.title }}</a></div>
 
 					{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 					{% capture month %}{{ post.date | date: '%B' }}{% endcapture %}
