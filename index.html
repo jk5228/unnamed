@@ -68,7 +68,7 @@
 			background-color: #050505;
 		}
 		{% for p in site.posts %}
-			{% if forloop.index < 5 %}
+			{% if forloop.index <= 5 %}
 		#post{{ forloop.index }} {
 			background-image: url('{{ site.url }}/imgs/{{ p.cover }}');
 			}
@@ -270,7 +270,7 @@
 		<div id="postcontainer">
 			<div id="bar1">
 				{% for p in site.posts %}
-					{% if forloop.index < 5 %}
+					{% if forloop.index <= 5 %}
 				<div class="post">
 					<div class="postdate">{{ p.date | date: "%B %-d, %Y" }}</div>
 					<a href="{{ p.url }}"><div class="postimg" id="post{{ forloop.index }}"></div></a>
