@@ -46,17 +46,19 @@
     <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
 
-    	$(document).ready( function() {
-			$('.opening').scroll(function(e){
-				alert("hello");
-				parallax();
-			});
-			
-			function parallax(){
-				var scrolled = $(document).scrollTop();
-				$('.opening').css('background-position-y',-(scrolled*0.9)+'px');
-			}
-		});
+    	var velocity = 0.5;
+
+			function update(){ 
+			    var pos = $(window).scrollTop(); 
+			    $('.opening').each(function() { 
+			        var $element = $(this);
+			        // subtract some from the height b/c of the padding
+			        var height = $element.height()-18;
+			        $(this).css('backgroundPosition', '50% ' + Math.round((height - pos) * velocity) + 'px'); 
+			    }); 
+			};
+
+			$(window).bind('scroll', update);
 
     </script>
 </head>
