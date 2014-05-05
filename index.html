@@ -289,12 +289,12 @@
 		<div id="archivecontainer">
 			<div id="bar2">
 
-				// Generate archive
+				<!-- Generate archive -->
 
 				{% capture year %}{{ site.posts.first.date | date: '%Y' }}{% endcapture %}
 				{% capture month %}{{ site.posts.first.date | date: '%B' }}{% endcapture %}
 
-				// Creates first year and month labels if there are any posts
+				<!-- Creates first year and month labels if there are any posts -->
 				{% if site.posts %}
 					<div class="year">
 						<h2>{{ year }}</h2>
@@ -302,13 +302,13 @@
 						<h3>{{ month }}</h3>
 				{% endif %}
 
-				// Iterate through posts
+				<!-- Iterate through posts -->
 				{% for post in site.posts %}
 
 					{% capture cyear %}{{ post.date | date: '%Y' }}{% endcapture %}
 					{% capture cmonth %}{{ post.date | date: '%B' }}{% endcapture %}
 
-					// Create new year and month labels if current year isn't previous year
+					<!-- Create new year and month labels if current year isn't previous year -->
 					{% if year != cyear %}
 						</div>
 						</div>
@@ -317,14 +317,14 @@
 						<div class="month">
 						<h3>{{ cmonth }}</h3>
 
-					// Create new month label if current month isn't previous month
+					<!-- Create new month label if current month isn't previous month -->
 					{% elsif month != cmonth %}
 						</div>
 						<div class="month">
 						<h3>{{ cmonth }}</h3>
 					{% endif %}
 
-					// Create link to current post
+					<!-- Create link to current post -->
 					<div class="headline"><a href="{{ post.url }}">{{ post.title }}</a></div>
 
 					{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
@@ -332,7 +332,7 @@
 
 				{% endfor %}
 
-				// Close if last year and month divs if there were any posts
+				<!-- Close if last year and month divs if there were any posts -->
 				{% if site.posts %}
 					</div>
 					</div>
