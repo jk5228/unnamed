@@ -74,9 +74,9 @@
 		<div class="article">
 			<p></p>
 			<h2 class="title" id="title1">{{ page.title }}</h2>
-			{{ page.date | date: "%B %-d, %Y" }}
+			<p>{{ page.date | date: "%B %-d, %Y" }}</p>
 			<p></p>
-			{{ page.content | newline_to_br }}
+			<p>{{ page.content | newline_to_br }}</p>
 			<div class="footer"></div>
 		</div>
 	</div>
