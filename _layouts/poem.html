@@ -42,22 +42,6 @@
 			text-align: center;
 		}
     </style>
-
-    <script type="text/javascript" src="{{ site.url }}/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript">
-
-    	$(document).ready( function() {
-			$(window).scroll(function(e){
-			  parallax();
-			});
-
-			function parallax(){
-			  var scrolled = $(document).scrollTop();
-			  $('.opening').css('background-position-x',(scrolled*0.4)+'px');
-			}
-		});
-
-    </script>
 </head>
 <body>
 	<div class="navbar" id="nav1">
