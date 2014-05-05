@@ -329,7 +329,7 @@
 					{% capture last %}{{ day.last }}{% endcapture %}
 
 					<!-- Get correct ordinal ending for given day -->
-					{% case last %}
+					{% case last.prev %}
 						{% when 1 %}
 							{% capture ordinal %}st{% endcapture %}
 						{% when 2 %}
