@@ -327,7 +327,7 @@
 					<!-- Create link to current post preceded by day of post-->
 					{% capture day %}{{ post.date | date: '%d' }}{% endcapture %}
 
-					<div class="headline">{{ day }} <a href="{{ post.url }}">{{ post.title }}</a></div>
+					<div class="headline">{{ day }}   <a href="{{ post.url }}">{{ post.title }}</a></div>
 
 					{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 					{% capture month %}{{ post.date | date: '%B' }}{% endcapture %}
