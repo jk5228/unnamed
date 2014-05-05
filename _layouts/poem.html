@@ -43,7 +43,7 @@
 		}
     </style>
 
-    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="{{ site.url }}/jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
 
     	$(document).ready( function() {
@@ -53,7 +53,7 @@
 
 			function parallax(){
 			  var scrolled = $(document).scrollTop();
-			  $('.opening').css('background-position-y',-(scrolled*0.4)+'px');
+			  $('.opening').css('background-position-x',(scrolled*0.4)+'px');
 			}
 		});
 
