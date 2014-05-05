@@ -1,7 +1,7 @@
 html, body {
 	height: 100%;
 	width: 100%;
-	font-family: "Raleway";
+	font-family: "Raleway", Helvetica Neue, sans-serif;
 	margin: 0%;
 	padding: 0%;
 }
@@ -202,4 +202,5 @@ a:hover {
 }
 .date {
 	font-weight: 300;
+	font-family: "Raleway", Helvetica Neue, sans-serif;
 }
