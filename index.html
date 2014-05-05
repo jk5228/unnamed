@@ -289,17 +289,46 @@
 		<div id="archivecontainer">
 			<div id="bar2">
 
+				{% capture year %}{{ site.posts.first.date | date: '%Y' }}{% endcapture %}
+				{% capture month %}{{ site.posts.first.date | date: '%B' }}{% endcapture %}
+
+				{% if site.posts %}
+					<div class="year">
+						<h2>{{ year }}</h2>
+						<div class="month">
+						<h3>{{ month }}</h3>
+				{% endif %}
+
 				{% for post in site.posts %}
-				    {% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
-				    {% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
-				        {% if month != nmonth %}
-				            {% if forloop.index != 1 %}</ul>{% endif %}
-				            <h3>{{ post.date | date: '%B %Y' }}</h3><ul>
-				        {% endif %}
-				    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-				    <time>{{ post.date | date: "%e %B %Y" }}</time>
+
+					{% capture cyear %}{{ post.date | date: '%Y' }}{% endcapture %}
+					{% capture cmonth %}{{ post.date | date: '%B' }}{% endcapture %}
+
+					{% if year != cyear %}
+						</div>
+						</div>
+						<div class="year">
+						<h2>{{ cyear }}</h2>
+						<div class="month">
+						<h3>{{ cmonth }}</h3>
+					{% elsif month != cmonth %}
+						</div>
+						<div class="month">
+						<h3>{{ cmonth }}</h3>
+					{% endif %}
+
+					<div class="headline"><a href="{{ post.url }}">{{ post.title }}</a></div>
+
+					{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+					{% capture month %}{{ post.date | date: '%B' }}{% endcapture %}
+
 				{% endfor %}
-				
+
+				{% if site.posts %}
+					</div>
+					</div>
+				{% endif %}
+
 			</div>
 		</div>
 	</div>
