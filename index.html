@@ -325,8 +325,8 @@
 					{% endif %}
 
 					<!-- Create link to current post preceded by day of post-->
-					{% capture day %}{{ post.date | date: '%-d' }}{% endcapture %}
-					{% capture last %}{{ day.last }}{% endcapture %}
+					{% capture day %}{{ post.date | date: '%d' }}{% endcapture %}
+					{% capture last %}{{ day | truncate:(day.size-1): }}{% endcapture %}
 
 					<!-- Get correct ordinal ending for given day -->
 					{% case last %}
