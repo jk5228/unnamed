@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-    <title>Cleaning My Room | Unnamed</title>
+    <title>{{ page.title }} | {{ site.title }}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="../main.css" rel="stylesheet" type="text/css" />
+    <link href="{{ site.url }}/main.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Crimson+Text|Raleway:100,300,400' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="../imgs/icon.png">
+    <link rel="shortcut icon" href="{{ site.url }}/imgs/icon.png">
 
     <style>
     	#nav1 {
@@ -19,7 +19,7 @@
 			float: left;
     	}
 		#article-img {
-			background-image: url('../imgs/qtip.jpg');
+			background-image: url('{{ site.url }}/imgs/{{ page.cover }}');
 		}
 		#title1 {
 			position: relative;
@@ -46,20 +46,16 @@
     <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
 
-    	var velocity = 0.5;
+    	$(document).ready( function() {
+			$(window).scroll(function(e){
+			  parallax();
+			});
 
-			function update(){ 
-				alert("hello");
-			    var pos = $(window).scrollTop(); 
-			    $('.opening').each(function() { 
-			        var $element = $(this);
-			        // subtract some from the height b/c of the padding
-			        var height = $element.height()-18;
-			        $(this).css('backgroundPosition', '50% ' + Math.round((height - pos) * velocity) + 'px'); 
-			    }); 
-			};
-
-			$(window).bind('scroll', update);
+			function parallax(){
+			  var scrolled = $(document).scrollTop();
+			  $('.opening').css('background-position-y',-(scrolled*0.4)+'px');
+			}
+		});
 
     </script>
 </head>
@@ -74,13 +70,10 @@
 	<div class="content" id="article-div">
 		<div class="article">
 			<p></p>
-			<h2 class="title" id="title1">Cleaning My Room</h2>
-			<p>May 2, 2014</p>
+			<h2 class="title" id="title1">{{ page.title }}</h2>
+			<p>{{ page.date | date: "%B %-d, %Y" }}</p>
 			<p></p>
-			<p>When you fall asleep accidentally, waking up the next morning is like opening an old box of junk that was at some point important enough for you to put in the closet and forget. It’s a gradual realization, a hangover, with that same tinge of regret. After I understood what had happened, I groped around blindly for my glasses, which had somehow always survived such episodes. I leaned toward the dresser to the left and saw them, folded. I imagined my mom walking in the night before, surveying the scene in mild amusement. I put them on and looked around the bed for more clues of what had happened. My phone had at some point dropped to the right side of the bed. A particularly thick issue of Time Magazine lay just beneath the sheets. I’d been reading about Edward Snowden’s escape to Russia, but matters of national security and historic breaches of privacy had no chance when faced with the enveloping tide of drowsiness.</p>
-			<p>This was Christmas day of my sophomore year in college. In recent years my family had slipped precipitously from celebrating Christmas to acknowledging Christmas. And seeing as we’d planned to clean up the house today before relatives arrived in the afternoon, I went back to sleep. My mom woke me up again and told me to clean up my room. I felt a bit like laughing. My room was our home’s attic. Whenever we wanted to make the house seem less like a dump, we tossed the relevant laundry, boxes, and papers in there. It was messy enough that I stayed in my sister’s room whenever I came back home. My bedroom has a constant dusky feel. The window faces the wall of the neighbor’s house, just a hop away. I had no idea where to start. The bed was lost beneath laundry, which overflowed onto the floor, which was dotted with stacks of car magazines, empty shoeboxes, papers and binders saved from past school years, books read and books half- and quarter-read. An open desk drawer drew me in. I pulled out a large album. On the other side of the cover were drawings I’d made over a decade ago. I flipped through the pages, seeing elementary school report cards and perfect attendance awards. I laughed out loud at the latter and wondered when I went bad.</p>
-			<p>My old desk was covered with more papers and bits of plastic and metal dissected from airsoft guns and dead electronics. At the corner of my desk sat a blue rotating desk organizer, filled with cereal box trinkets, springs sticking out from a gaggle of magnets like unkempt hair. I appraised all of these worthless, inscrutable scraps of the past with some satisfaction. I alone could unravel this frozen, meaningless chaos. Where this round bit came from, its function, why it now sat on my desk. When I drew this picture and what I was thinking at the time. A few hours had already passed, and I’d so far managed to scavenge around for glimmers in an unperturbed sea of memories. Post-It notes clung to the far wall, each recording some lofty goal I’d set for myself in high school. I thought about my friend Cole’s bedroom, clean and unfettered by such sentimental baggage. Cole lived a few roads down from here, and I’d whiled away weeks at his house during high school. Now I was at college and he was working two jobs. I wondered where the anachronisms in his house were, where the childhood toys and forgotten books collected dust.</p>
-			<p>I was only 20, but standing in my room, I appreciated how much of that time had already collapsed into dusty oblivion, now remembered only by the things I left behind. A white binder sat beneath the Post-It notes. I remembered the tens of hours I’d spent dreaming up and drawing those houses and skyscrapers and museums into two-dimensional existence. At the time, I was certain I’d study architecture in college and eventually start my own firm. Now, staring at those heavy, effortful pencil lines on graph paper felt like returning the gaze of that forward-looking teenager. He was probably disappointed by the insecure, indecisive bum of a college student he’d one day become. I closed the binder and tossed it back into its dusty place. I’d gone into my bedroom to clean it and, failing that, decided to settle for some reminiscing. Standing amid the wreckages of the past, looking through old iterations of myself, I felt disquieted by the instability.</p>
+			<p>{{ page.content | newline_to_br }}</p>
 			<div class="footer"></div>
 		</div>
 	</div>
