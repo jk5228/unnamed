@@ -3,6 +3,9 @@ _gh_pages
 _site
 .ruby-version
 
+# Ignore to-do list
+to-do.txt
+
 # Numerous always-ignore extensions
 *.diff
 *.err
