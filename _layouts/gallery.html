@@ -173,10 +173,16 @@
 
 			// Switch to image on thumbnail click
 			$(".thumb").click( function(e) {
-				ind = $(this).attr("id").substr(5) - 1;
-				$('#image').fadeOut(300, function(){
-			    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
-			    });
+				temp = $(this).attr("id").substr(5) - 1;
+
+				if (temp != ind) {
+
+					ind = temp;
+
+					$('#image').fadeOut(300, function(){
+				    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
+				    });
+				}
 			});
 
 			// // Show left navigation arrows if cursor is near left edge of screen (and for first three seconds after DOM loads)
