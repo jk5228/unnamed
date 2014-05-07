@@ -33,17 +33,10 @@
 			margin-top: 9%;
 			line-height: initial;
 		}
-		#menu1 {
-			position: relative;
-			width: 100%;
-		}
-		#menu1 .menuitem {
-			font-size: 0.3em;
-			font-weight: 300;
-			width: 26.5%;
-			margin: 0% 1.5% 0% 1.5%;
-			display: inline-block;
-			text-align: center;
+		#panel {
+			position: fixed;
+			bottom: 0%;
+			background-color: rgba(0,0,0,0.8);
 		}
     </style>
 
@@ -81,8 +74,29 @@
     			}
     			else if (e.pageY < navY + sensitivity) {
     				$("#nav1").fadeIn("ease-in-out");
+    			}
+    			else {
     				setTimeout(function() {
 				        $("#nav1").fadeOut("ease-in-out");
+				    }, 3000);
+    			}
+    		});
+
+    		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
+    		var panelY = $("#panel").height() + $("#panel").outerHeight(true);
+    		setTimeout(function() {
+		        $("#panel").fadeOut("ease-in-out");
+		    }, 3000);
+
+    		var sensitivity = 10;
+    		$(document).mousemove( function(e) {
+    			if (e.pageY > panelY + sensitivity && $("#panel").css('display') != 'none') {
+
+    			}
+    			else if (e.pageY > panelY + sensitivity) {
+    				$("#panel").fadeIn("ease-in-out");
+    				setTimeout(function() {
+				        $("#panel").fadeOut("ease-in-out");
 				    }, 3000);
     			}
     		});
@@ -111,7 +125,8 @@
 		<div class="navbutton" id="button3"><a href="http://unnamed.pw#archive-div">Archive</a></div>
 		<div class="navbutton" id="button4"><a href="http://unnamed.pw#about-div">About</a></div>
 	</div>
-	<div class="opening" id="gallery-full">
+	<div class="opening" id="gallery-full"></div>
+	<div id="panel">
 		
 	</div>
 </body>
