@@ -113,10 +113,10 @@
 			    }, 3000);
 
 	    		$(document).mousemove( function(e) {
-	    			if (e.pageY > panelY && $("#panel").css('display') == 'none') {
+	    			if (e.pageY + 'px' > panelY && $("#panel").css('display') == 'none') {
 	    				$("#panel").fadeIn("ease-in-out");
 	    			}
-	    			else if (e.pageY <= panelY) {
+	    			else if (e.pageY + 'px' <= panelY) {
 					    $("#panel").fadeOut("ease-in-out");
 	    			}
 	    		});
