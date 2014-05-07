@@ -164,6 +164,7 @@
     			}
     		});
 
+    		$(window).onLoad( function () {
     		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
     		var panelY = $(window).height() - $("#panel").height();
 
@@ -305,6 +306,8 @@
 	    		$(".thumb").css('border','none');
 	    		$("#thumb" + (ind + 1)).css('border','solid 3px white');
 	    	});
+
+    		});
 		});
 
     </script>
