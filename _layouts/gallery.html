@@ -88,16 +88,16 @@
     		// Show nav bar if cursor is nearby (and for first three seconds after DOM loads)
     		var navY = $("#nav1").height() + $("#nav1").outerHeight(true);
     		setTimeout(function() {
-		        $("#nav1").fadeOut(100, function(){});
+		        $("#nav1").fadeOut(200, function(){});
 		    }, 3000);
 
     		var navSensitivity = 10;
     		$(document).mousemove( function(e) {
     			if (e.pageY < navY + navSensitivity && $("#nav1").css('display') == 'none') {
-    				$("#nav1").fadeIn(100, function(){});
+    				$("#nav1").fadeIn(200, function(){});
     			}
     			else if (e.pageY >= navY + navSensitivity) {
-				    $("#nav1").fadeOut(100, function(){});
+				    $("#nav1").fadeOut(200, function(){});
     			}
     		});
 
@@ -109,16 +109,16 @@
 				$("#panel").show();
 
 	    		setTimeout(function() {
-			        $("#panel").fadeOut(100, function(){});
+			        $("#panel").fadeOut(200, function(){});
 			    }, 3000);
 
 	    		var panelSensitivity = 10;
 	    		$(document).mousemove( function(e) {
 	    			if (e.pageY > panelY - panelSensitivity && $("#panel").css('display') == 'none') {
-	    				$("#panel").fadeIn(100, function(){});
+	    				$("#panel").fadeIn(200, function(){});
 	    			}
 	    			else if (e.pageY <= panelY - panelSensitivity) {
-					    $("#panel").fadeOut(100, function(){});
+					    $("#panel").fadeOut(200, function(){});
 	    			}
 	    		});
 	    	}
