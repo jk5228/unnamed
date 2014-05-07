@@ -197,7 +197,7 @@
 
 			var arrSensitivity = 30;
 
-			// Show left navigation arrows if cursor is near left edge of screen (and for first three seconds after DOM loads)
+			// Show left navigation arrow if cursor is near left edge of screen (and for first three seconds after DOM loads)
     		var leftX = $("#leftarr").width();
     		
 			if (size > 1) {
@@ -217,6 +217,45 @@
 	    			}
 	    		});
 	    	}
+
+	    	// Show right navigation arrow if cursor is near right edge of screen (and for first three seconds after DOM loads)
+    		var rightX = $(window).width() - $("#rightarr").width();
+    		
+			if (size > 1) {
+
+				$("#rightarr").show();
+
+	    		setTimeout(function() {
+			        $("#rightarr").fadeOut(200, function(){});
+			    }, 3000);
+
+	    		$(document).mousemove( function(e) {
+	    			if (e.pageX > rightX - arrSensitivity && $("#rightarr").css('display') == 'none') {
+	    				$("#rightarr").fadeIn(200, function(){});
+	    			}
+	    			else if (e.pageX <= rightX - arrSensitivity) {
+					    $("#rightarr").fadeOut(200, function(){});
+	    			}
+	    		});
+	    	}
+
+			// Switch to image on left arrow click
+			$("#leftarr").click( function(e) {
+				ind = (ind + size - 1) % size;
+
+				$('#image').fadeOut(300, function(){
+			    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
+			    });
+			});
+
+			// Switch to image on right arrow click
+			$("#rightarr").click( function(e) {
+				ind = (ind + 1) % size;
+
+				$('#image').fadeOut(300, function(){
+			    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
+			    });
+			});
 		});
 
     </script>
