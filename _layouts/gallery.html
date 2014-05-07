@@ -69,10 +69,7 @@
 
     		var sensitivity = 10;
     		$(document).mousemove( function(e) {
-    			if (e.pageY < navY + sensitivity && $("#nav1").css('display') != 'none') {
-
-    			}
-    			else if (e.pageY < navY + sensitivity) {
+    			if (e.pageY < navY + sensitivity && $("#nav1").css('display') == 'none') {
     				$("#nav1").fadeIn("ease-in-out");
     			}
     			else if ($("#nav1").css('display') != 'none') {
