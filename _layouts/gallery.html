@@ -106,9 +106,7 @@
 			    if (e.keyCode == 37) {
 			       ind = (ind + size - 1) % size;
 			       $('#image').fadeOut(300, function(){
-				      $(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').bind('onreadystatechange load', function(){
-				         $(this).fadeIn(300);
-				      });
+				      $(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
 				   });
 			       return false;
 			    }
@@ -117,9 +115,6 @@
 			       $('#image').fadeOut(300, function(){
 				      $(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
 				   });
-			       // $("#gallery-full").css('opacity', '0');
-			       // $("#gallery-full").css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)');
-			       // $("#gallery-full").css('opacity', '1');
 			       return false;
 			    }
 			});
