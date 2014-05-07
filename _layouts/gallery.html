@@ -55,7 +55,7 @@
     <script type="text/javascript">
 
     	$(document).ready( function() {
-    		
+
     		// Set size to number of images in gallery
     		var size = {{ page.imgs.size }};
 
@@ -90,36 +90,45 @@
 
     		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
     		var panelY = $("#panel").height() + $("#panel").outerHeight(true);
-    		setTimeout(function() {
-		        $("#panel").fadeOut("ease-in-out");
-		    }, 3000);
+    		
+			if (size > 1) {
 
-    		var sensitivity = 10;
-    		$(document).mousemove( function(e) {
-    			if (e.pageY < panelY + sensitivity && $("#panel").css('display') == 'none') {
-    				$("#panel").fadeIn("ease-in-out");
-    			}
-    			else if (e.pageY >= panelY + sensitivity) {
-				    $("#panel").fadeOut("ease-in-out");
-    			}
-    		});
+	    		setTimeout(function() {
+			        $("#panel").fadeOut("ease-in-out");
+			    }, 3000);
+
+	    		var sensitivity = 10;
+	    		$(document).mousemove( function(e) {
+	    			if (e.pageY < panelY + sensitivity && $("#panel").css('display') == 'none') {
+	    				$("#panel").fadeIn("ease-in-out");
+	    			}
+	    			else if (e.pageY >= panelY + sensitivity) {
+					    $("#panel").fadeOut("ease-in-out");
+	    			}
+	    		});
+	    	}
+	    	else {
+	    		$("#panel").hide();
+	    	}
 
     		// Switch image on keypress
 			$(document).keydown( function(e){
-			    if (e.keyCode == 37) {
-			       ind = (ind + size - 1) % size;
-			       $('#image').fadeOut(300, function(){
-				      $(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
-				   });
-			       return false;
-			    }
-			    if (e.keyCode == 39) {
-			       ind = (ind + 1) % size;
-			       $('#image').fadeOut(300, function(){
-				      $(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
-				   });
-			       return false;
-			    }
+				if (size > 1) {
+				    if (e.keyCode == 37) {
+				       ind = (ind + size - 1) % size;
+				       $('#image').fadeOut(300, function(){
+					      $(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
+					   });
+				       return false;
+				    }
+				    if (e.keyCode == 39) {
+				       ind = (ind + 1) % size;
+				       $('#image').fadeOut(300, function(){
+					      $(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
+					   });
+				       return false;
+				    }
+				}
 			});
 		});
 
