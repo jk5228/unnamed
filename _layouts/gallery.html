@@ -20,6 +20,7 @@
 			display: inline-block;
 			text-align: center;
 			float: left;
+			display: none;
     	}
 		#gallery-full {
 			z-index: 0;
@@ -68,8 +69,21 @@
     		// Image index in array
     		var ind = 0;
 
+    		// Show nav bar if cursor is nearby
+    		var navY = $("nav1").height();
+    		var sensitivity = 10;
+    		alert(navY);
+    		$(document).mousemove( function(e) {
+    			if (e.pageY < navY + sensitivity) {
+    				$("#nav1").slidedown();
+    				setTimeout(function() {
+				        $("#nav1").sideup();
+				    }, 3000);
+    			}
+    		});
+
     		// Switch image on keypress
-			$(document).keydown(function(e){
+			$(document).keydown( function(e){
 			    if (e.keyCode == 37) {
 			       ind = (ind + size - 1) % size;
 			       $("#gallery-full").css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)');
