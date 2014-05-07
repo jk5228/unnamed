@@ -50,7 +50,6 @@
 			position: absolute;
 			bottom: 0%;
 			background-color: rgba(0,0,0,0.8);
-			display: none;
 		}
 		#fullscreen {
 			position: absolute;
@@ -167,27 +166,24 @@
 
     		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
     		var panelY = $(window).height() - $("#panel").height();
-    		
-				$("#panel").show();
 
 			if (size > 1) {
-
 				$(".thumb").css('display','inline-block');
+			}
 
-	    		setTimeout(function() {
-			        $("#panel").fadeOut(200);
-			    }, 3000);
+    		setTimeout(function() {
+		        $("#panel").fadeOut(200);
+		    }, 3000);
 
-	    		var panelSensitivity = 20;
-	    		$(document).mousemove( function(e) {
-	    			if (e.pageY > panelY - panelSensitivity && $("#panel").css('display') == 'none') {
-	    				$("#panel").fadeIn(200);
-	    			}
-	    			else if (e.pageY <= panelY - panelSensitivity) {
-					    $("#panel").fadeOut(200);
-	    			}
-	    		});
-	    	}
+    		var panelSensitivity = 20;
+    		$(document).mousemove( function(e) {
+    			if (e.pageY > panelY - panelSensitivity && $("#panel").css('display') == 'none') {
+    				$("#panel").fadeIn(200);
+    			}
+    			else if (e.pageY <= panelY - panelSensitivity) {
+				    $("#panel").fadeOut(200);
+    			}
+    		});
 
     		// Switch image on keypress
 			$(document).keydown( function(e){
