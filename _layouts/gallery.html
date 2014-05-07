@@ -52,10 +52,6 @@
 			background-color: rgba(0,0,0,0.8);
 			display: none;
 		}
-		#bar1 {
-			position: relative;
-			width: 100%;
-		}
 		#fullscreen {
 			position: absolute;
 			right: 0%;
@@ -70,12 +66,6 @@
 		}
 		#fullscreen:hover {
 			opacity: 1;
-		}
-		#thumb-container {
-			position: relative;
-			width: 100%;
-			overflow-x: scroll;
-			overflow-y: hidden;
 		}
 		.thumb {
 			z-index: 2;
@@ -163,11 +153,6 @@
 	    			{% endif %}
 	    		{% endfor %}
     		];
-
-    		// Sets panel width to fit thumbnails
-	    	var width = $('#panel img').size();
-	    	var elev = $(window).width() * 0.11;
-	    	$('#bar1').css('width', (width *  + 2) + 'em');
 
     		// Image index in array
     		var ind = 0;
@@ -354,13 +339,9 @@
 		<div id="gallery-title">{{ page.title }}</div>
 		<div id="gallery-info">{{ page.date | date: "%B %-d, %Y" }}</div>
 		<div id="gallery-info">{{ page.content | markdownify }}</div>
-		<div id="thumb-container">
-			<div id="bar1">
-				{% for img in page.imgs %}
-					<img class="thumb" id="thumb{{ forloop.index }}" src="{{ site.url }}/imgs/{{ img }}">
-				{% endfor %}
-			</div>
-		</div>
+			{% for img in page.imgs %}
+				<img class="thumb" id="thumb{{ forloop.index }}" src="{{ site.url }}/imgs/{{ img }}">
+			{% endfor %}
 	</div>
 </body>
 </html>
