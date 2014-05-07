@@ -289,9 +289,11 @@
 
 	    		if (!window.screenTop && !window.screenY) {
 				    var cfs =
-			               el.cancelFullScreen
-			            || el.webkitCancelFullScreen
+			               el.exitFullscreen
+			            || el.msExitFullscreen
 			            || el.mozCancelFullScreen
+			            || el.webkitExitFullscreen
+			            || el.webkitExitFullscreen
 				    ;
 				    cfs.call(el);
 				}
