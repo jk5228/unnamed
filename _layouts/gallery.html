@@ -56,16 +56,14 @@
 
     		var imgs = [
     			{% for img in page.imgs %}
-	    			"{{ page.imgs[forloop.index] }}"
+	    			"{{ page.imgs[forloop.index-1] }}"
 	    			{% if forloop.index + 1 != page.imgs.size %}
 	    				,
 	    			{% endif %}
 	    		{% endfor %}
     		];
 
-    		for(var i = 0; i <= size; i++) {
-    			alert(imgs);
-    		}
+    		alert(imgs);
 
 			$(document).keydown(function(e){
 			    if (e.keyCode == 37) {
