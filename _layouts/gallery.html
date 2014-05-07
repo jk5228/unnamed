@@ -62,6 +62,25 @@
 			width: auto;
 			margin: 1em 0em 1em 1em;
 		}
+		.arrow {
+			font-family: "Raleway", Helvetica Neue, sans-serif;
+			font-size: 3em;
+			position: absolute;
+			display: inline-block;
+			vertical-align: middle;
+			height: 3em;
+			width: 3em;
+			color: white;
+			background-color: rgba(0,0,0,0.8);
+		}
+		#left {
+			left: 1em;
+		}
+		#right {
+			right: 1em;
+		}
+
+		}
     </style>
 
     <script type="text/javascript" src="{{ site.url }}/jquery-1.9.1.min.js"></script>
@@ -143,13 +162,35 @@
 				}
 			});
 
-			// Switch to image on click
+			// Switch to image on thumbnail click
 			$(".thumb").click( function(e) {
 				ind = $(this).attr("id").substr(5) - 1;
 				$('#image').fadeOut(300, function(){
 			    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
 			    });
 			});
+
+			// // Show left navigation arrows if cursor is near left edge of screen (and for first three seconds after DOM loads)
+   //  		var leftY = $("#left").height();
+    		
+			// if (size > 1) {
+
+			// 	$("#panel").show();
+
+	  //   		setTimeout(function() {
+			//         $("#panel").fadeOut(200, function(){});
+			//     }, 3000);
+
+	  //   		var panelSensitivity = 10;
+	  //   		$(document).mousemove( function(e) {
+	  //   			if (e.pageY > leftY - panelSensitivity && $("#panel").css('display') == 'none') {
+	  //   				$("#panel").fadeIn(200, function(){});
+	  //   			}
+	  //   			else if (e.pageY <= leftY - panelSensitivity) {
+			// 		    $("#panel").fadeOut(200, function(){});
+	  //   			}
+	  //   		});
+	  //   	}
 		});
 
     </script>
@@ -163,6 +204,8 @@
 	</div>
 	<div id="gallery-full">
 		<div id="image"></div>
+		<div class="arrow" id="left"><</div>
+		<div class="arrow" id="right">></div>
 	</div>
 	<div id="panel">
 		{% for img in page.imgs %}
