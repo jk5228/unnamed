@@ -52,6 +52,19 @@
 			background-color: rgba(0,0,0,0.8);
 			display: none;
 		}
+		#fullscreen {
+			position: absolute;
+			right: 1%;
+			top: 1%;
+			height: 1em;
+			width: 1em;
+			background-image: url('{{ site.url }}/imgs/fullscreen.png');
+			opacity: 0.7;
+			cursor: pointer;
+		}
+		#fullscreen:hover {
+			opacity: 1;
+		}
 		.thumb {
 			z-index: 2;
 			display: inline-block;
@@ -176,6 +189,11 @@
 	    		});
 	    	}
 
+	    	// Go fullscreen if user clicks fullscreen button
+	    	$("#fullscreen").click( function() {
+	    		$(window).requestFullscreen();
+	    	});
+
     		// Switch image on keypress
 			$(document).keydown( function(e){
 				if (size > 1) {
@@ -292,6 +310,7 @@
 		</div>
 	</div>
 	<div id="panel">
+		<div id="fullscreen"></div>
 		<div id="gallery-title">{{ page.title }}</div>
 		<div id="gallery-info">{{ page.content | markdownify }}</div>
 		{% for img in page.imgs %}
