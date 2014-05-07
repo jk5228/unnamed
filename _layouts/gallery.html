@@ -289,11 +289,11 @@
 
 	    		if (!window.screenTop && !window.screenY) {
 				    var cfs =
-			               el.exitFullscreen
-			            || el.msExitFullscreen
-			            || el.mozCancelFullScreen
-			            || el.webkitExitFullscreen
-			            || el.webkitExitFullscreen
+			               el.exitFullscreen()
+			            || el.msExitFullscreen()
+			            || el.mozCancelFullScreen()
+			            || el.webkitExitFullscreen()
+			            || el.webkitExitFullscreen()
 				    ;
 				    cfs.call(el);
 				}
