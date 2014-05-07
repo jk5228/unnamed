@@ -55,8 +55,8 @@
 		.thumb {
 			z-index: 2;
 			display: inline-block;
-			max-height: 10em;
-			max-width: 10em;
+			max-height: 200px;
+			max-width: 200px;
 			height: auto;
 			width: auto;
 			margin: 1em;
@@ -112,10 +112,11 @@
 			    }, 3000);
 
 	    		$(document).mousemove( function(e) {
-	    			if (e.pageY + 'px' > panelY + 'px' && $("#panel").css('display') == 'none') {
+	    			if (e.pageY > panelY && $("#panel").css('display') == 'none') {
+	    				alert(e.pageY);
 	    				$("#panel").fadeIn("ease-in-out");
 	    			}
-	    			else if (e.pageY + 'px' <= panelY + 'px' ) {
+	    			else if (e.pageY <= panelY) {
 					    $("#panel").fadeOut("ease-in-out");
 	    			}
 	    		});
