@@ -50,6 +50,11 @@
     <script type="text/javascript" src="{{ site.url }}/jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
 
+    	$(window).load(function() {
+    		var navY = $("nav1").height();
+    		alert(navY);
+		});
+
     	$(document).ready( function() {
     		
     		// Set size to number of images in gallery
@@ -69,10 +74,6 @@
     		var ind = 0;
 
     		// Show nav bar if cursor is nearby (and for first three seconds after DOM loads)
-    		$(window).load(function() {
-	    		var navY = $("nav1").height();
-	    		alert(navY);
-			});
     		setTimeout(function() {
 		        $("#nav1").slideup();
 		    }, 3000);
