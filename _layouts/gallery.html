@@ -70,7 +70,8 @@
     		var ind = 0;
 
     		// Show nav bar if cursor is nearby
-    		var navY = $("nav1").height();
+    		var navY = $("nav1").css('display','block').height();
+    		$("nav1").css('display','none');
     		var sensitivity = 10;
     		alert(navY);
     		$(document).mousemove( function(e) {
