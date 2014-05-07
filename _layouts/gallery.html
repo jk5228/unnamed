@@ -111,14 +111,12 @@
 			        $("#panel").fadeOut("ease-in-out");
 			    }, 3000);
 
-	    		alert(panelY);
-
 	    		var sensitivity = 10;
 	    		$(document).mousemove( function(e) {
 	    			if (e.pageY > panelY + sensitivity && $("#panel").css('display') == 'none') {
 	    				$("#panel").fadeIn("ease-in-out");
 	    			}
-	    			else if (e.pageY <= panelY + sensitivity) {
+	    			if (e.pageY <= panelY + sensitivity) {
 					    $("#panel").fadeOut("ease-in-out");
 	    			}
 	    		});
