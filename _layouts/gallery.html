@@ -142,6 +142,14 @@
 				    }
 				}
 			});
+
+			// Switch to image on click
+			$(".thumb").click( function(e) {
+				ind = $(this).attr("id").substr(5);
+				$('#image').fadeOut(300, function(){
+			    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
+			    });
+			});
 		});
 
     </script>
