@@ -89,7 +89,7 @@
 			text-align: center;
 			position: absolute;
 			height: 100%;
-			width: 5%;
+			width: 1em;
 			/*border-radius: 1em;*/
 			color: white;
 			background-color: rgba(0,0,0,0.8);
@@ -264,7 +264,6 @@
 
 	    		$(document).mousemove( function(e) {
 	    			if (e.pageX > rightX - arrSensitivity && $("#rightarr").css('display') == 'none') {
-	    				alert("mouse!");
 	    				$("#rightarr").fadeIn(200);
 	    			}
 	    			else if (e.pageX <= rightX - arrSensitivity) {
