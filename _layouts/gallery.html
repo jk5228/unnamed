@@ -70,18 +70,16 @@
 
     		// Show nav bar if cursor is nearby (and for first three seconds after DOM loads)
     		var navY = $("#nav1").height();
-    		alert(navY);
     		setTimeout(function() {
-		        $("#nav1").slideup();
+		        $("#nav1").slideUp();
 		    }, 3000);
 
     		var sensitivity = 10;
     		$(document).mousemove( function(e) {
     			if (e.pageY < navY + sensitivity) {
-    				alert("too close!");
-    				$("#nav1").slidedown();
+    				$("#nav1").slideDown();
     				setTimeout(function() {
-				        $("#nav1").slideup();
+				        $("#nav1").slideUp();
 				    }, 3000);
     			}
     		});
