@@ -72,13 +72,13 @@
 			    if (e.keyCode == 37) {
 			       ind = (ind + size - 1) % size;
 			       alert('{{ site.url }}/imgs/' + imgs[ind]);
-			       $("#gallery-full").css('background-image',url('{{ site.url }}/imgs/' + imgs[ind]));
+			       $("#gallery-full").css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)');
 			       return false;
 			    }
 			    if (e.keyCode == 39) {
 			       ind = (ind + 1) % size;
 			       alert('{{ site.url }}/imgs/' + imgs[ind]);
-			       $("#gallery-full").css('background-image',url('{{ site.url }}/imgs/' + imgs[ind]));
+			       $("#gallery-full").css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)');
 			       return false;
 			    }
 			});
