@@ -55,9 +55,6 @@
 		#bar1 {
 			position: relative;
 			width: 100%;
-			max-height: 10%;
-			overflow-x: scroll;
-			overflow-y: hidden;
 		}
 		#fullscreen {
 			position: absolute;
@@ -73,6 +70,12 @@
 		}
 		#fullscreen:hover {
 			opacity: 1;
+		}
+		#thumb-container {
+			position: relative;
+			width: 100%;
+			overflow-x: scroll;
+			overflow-y: hidden;
 		}
 		.thumb {
 			z-index: 2;
@@ -351,10 +354,12 @@
 		<div id="gallery-title">{{ page.title }}</div>
 		<div id="gallery-info">{{ page.date | date: "%B %-d, %Y" }}</div>
 		<div id="gallery-info">{{ page.content | markdownify }}</div>
-		<div id="bar1">
-			{% for img in page.imgs %}
-				<img class="thumb" id="thumb{{ forloop.index }}" src="{{ site.url }}/imgs/{{ img }}">
-			{% endfor %}
+		<div id="thumb-container">
+			<div id="bar1">
+				{% for img in page.imgs %}
+					<img class="thumb" id="thumb{{ forloop.index }}" src="{{ site.url }}/imgs/{{ img }}">
+				{% endfor %}
+			</div>
 		</div>
 	</div>
 </body>
