@@ -75,7 +75,7 @@
     			else if (e.pageY < navY + sensitivity) {
     				$("#nav1").fadeIn("ease-in-out");
     			}
-    			else {
+    			else if ($("#nav1").css('display') != 'none') {
     				setTimeout(function() {
 				        $("#nav1").fadeOut("ease-in-out");
 				    }, 3000);
