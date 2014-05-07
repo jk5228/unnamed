@@ -69,7 +69,7 @@
     		var ind = 0;
 
     		// Show nav bar if cursor is nearby (and for first three seconds after DOM loads)
-    		var navY = $("#nav1").height();
+    		var navY = $("#nav1").height() + $("#nav1").outerHeight(includeMargin);
     		setTimeout(function() {
 		        $("#nav1").slideUp("ease-in-out");
 		    }, 3000);
