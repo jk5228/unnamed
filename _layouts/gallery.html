@@ -64,6 +64,7 @@
 			cursor: pointer;
 		}
 		.arrow {
+			display: none;
 			z-index: 3;
 			font-family: "Raleway", Helvetica Neue, sans-serif;
 			font-size: 3em;
@@ -194,27 +195,27 @@
 				}
 			});
 
-			// // Show left navigation arrows if cursor is near left edge of screen (and for first three seconds after DOM loads)
-   //  		var leftY = $("#left").height();
+			// Show left navigation arrows if cursor is near left edge of screen (and for first three seconds after DOM loads)
+    		var leftX = $("#leftarr").width();
     		
-			// if (size > 1) {
+			if (size > 1) {
 
-			// 	$("#panel").show();
+				$("#leftarr").show();
 
-	  //   		setTimeout(function() {
-			//         $("#panel").fadeOut(200, function(){});
-			//     }, 3000);
+	    		setTimeout(function() {
+			        $("#leftarr").fadeOut(200, function(){});
+			    }, 3000);
 
-	  //   		var panelSensitivity = 10;
-	  //   		$(document).mousemove( function(e) {
-	  //   			if (e.pageY > leftY - panelSensitivity && $("#panel").css('display') == 'none') {
-	  //   				$("#panel").fadeIn(200, function(){});
-	  //   			}
-	  //   			else if (e.pageY <= leftY - panelSensitivity) {
-			// 		    $("#panel").fadeOut(200, function(){});
-	  //   			}
-	  //   		});
-	  //   	}
+	    		var leftSensitivity = 10;
+	    		$(document).mousemove( function(e) {
+	    			if (e.pageX < leftX + leftSensitivity && $("#leftarr").css('display') == 'none') {
+	    				$("#leftarr").fadeIn(200, function(){});
+	    			}
+	    			else if (e.pageX >= leftX + leftSensitivity) {
+					    $("#leftarr").fadeOut(200, function(){});
+	    			}
+	    		});
+	    	}
 		});
 
     </script>
