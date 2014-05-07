@@ -226,10 +226,10 @@
 				temp = $(this).attr("id").substr(5) - 1;
 
 				if (temp != ind) {
+					$("#thumb" + (ind + 1)).css('border','none');
 
 					ind = temp;
 
-					$(".thumb").css('border','none');
 	    			$("#thumb" + (ind + 1)).css('border','solid 3px white');
 
 					$('#image').fadeOut(300, function(){
