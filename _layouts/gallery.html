@@ -71,11 +71,13 @@
 			$(document).keydown(function(e){
 			    if (e.keyCode == 37) {
 			       ind = (ind + size - 1) % size;
-			       $("#gallery-full").css('background-image','{{ site.url }}/imgs/' + (imgs[ind]));
+			       alert(ind);
+			       $("#gallery-full").css('background-image','{{ site.url }}/imgs/' + imgs[ind]);
 			       return false;
 			    }
 			    if (e.keyCode == 39) {
 			       ind = (ind + 1) % size;
+			       alert(ind);
 			       $("#gallery-full").css('background-image','{{ site.url }}/imgs/' + imgs[ind]);
 			       return false;
 			    }
