@@ -91,7 +91,7 @@
 		        $("#nav1").fadeOut("ease-in-out");
 		    }, 3000);
 
-    		var sensitivity = 10;
+    		var navSensitivity = 10;
     		$(document).mousemove( function(e) {
     			if (e.pageY < navY + sensitivity && $("#nav1").css('display') == 'none') {
     				$("#nav1").fadeIn("ease-in-out");
@@ -112,11 +112,12 @@
 			        $("#panel").fadeOut("ease-in-out");
 			    }, 3000);
 
+	    		var panelSensitivity = 10;
 	    		$(document).mousemove( function(e) {
-	    			if (e.pageY > panelY && $("#panel").css('display') == 'none') {
+	    			if (e.pageY + panelSensitivity > panelY && $("#panel").css('display') == 'none') {
 	    				$("#panel").fadeIn("ease-in-out");
 	    			}
-	    			else if (e.pageY <= panelY) {
+	    			else if (e.pageY + panelSensitivity <= panelY) {
 					    $("#panel").fadeOut("ease-in-out");
 	    			}
 	    		});
