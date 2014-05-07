@@ -226,11 +226,10 @@
 				temp = $(this).attr("id").substr(5) - 1;
 
 				if (temp != ind) {
-					$("#thumb" + (ind + 1)).css('border','none');
 
 					ind = temp;
 
-	    			$("#thumb" + (ind + 1)).css('border','solid 3px white');
+					$.when( $(".thumb").css('border','none') ).then( $("#thumb" + (ind + 1)).css('border','solid 3px white') );
 
 					$('#image').fadeOut(300, function(){
 				    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
