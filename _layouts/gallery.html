@@ -293,7 +293,7 @@
 	</div>
 	<div id="panel">
 		<div id="gallery-title">{{ page.title }}</div>
-		<div id="gallery-info">{{ page.content }}</div>
+		<div id="gallery-info">{{ page.content | markdownify }}</div>
 		{% for img in page.imgs %}
 			<img class="thumb" id="thumb{{ forloop.index }}" src="{{ site.url }}/imgs/{{ img }}">
 		{% endfor %}
