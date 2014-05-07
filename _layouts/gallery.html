@@ -76,7 +76,7 @@
 
     		var sensitivity = 10;
     		$(document).mousemove( function(e) {
-    			if (e.pageY < navY + sensitivity) {
+    			if (e.pageY < navY + sensitivity && $("#nav1").css('display') != 'none') {
     				$("#nav1").slideDown("ease-in-out");
     				setTimeout(function() {
 				        $("#nav1").slideUp("ease-in-out");
