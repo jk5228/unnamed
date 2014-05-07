@@ -99,28 +99,28 @@
     			}
     		});
 
-   //  		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
-   //  		var panelY = $("#panel").height() + $("#panel").outerHeight(true);
+    		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
+    		var panelY = $("#panel").height() + $("#panel").outerHeight(true);
     		
-			// if (size > 1) {
+			if (size > 1) {
 
-	  //   		setTimeout(function() {
-			//         $("#panel").fadeOut("ease-in-out");
-			//     }, 3000);
+	    		setTimeout(function() {
+			        $("#panel").fadeOut("ease-in-out");
+			    }, 3000);
 
-	  //   		var sensitivity = 10;
-	  //   		$(document).mousemove( function(e) {
-	  //   			if (e.pageY < panelY + sensitivity && $("#panel").css('display') == 'none') {
-	  //   				$("#panel").fadeIn("ease-in-out");
-	  //   			}
-	  //   			else if (e.pageY >= panelY + sensitivity) {
-			// 		    $("#panel").fadeOut("ease-in-out");
-	  //   			}
-	  //   		});
-	  //   	}
-	  //   	else {
-	  //   		$("#panel").hide();
-	  //   	}
+	    		var sensitivity = 10;
+	    		$(document).mousemove( function(e) {
+	    			if (e.pageY < panelY + sensitivity && $("#panel").css('display') == 'none') {
+	    				$("#panel").fadeIn("ease-in-out");
+	    			}
+	    			else if (e.pageY >= panelY + sensitivity) {
+					    $("#panel").fadeOut("ease-in-out");
+	    			}
+	    		});
+	    	}
+	    	else {
+	    		$("#panel").hide();
+	    	}
 
     		// Switch image on keypress
 			$(document).keydown( function(e){
