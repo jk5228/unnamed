@@ -285,27 +285,14 @@
 
 			// Go fullscreen if user clicks fullscreen button
 	    	document.getElementById("fullscreen").addEventListener("click", function() {
-			    var el = document.documentElement;
-
-	    		if (!window.screenTop && !window.screenY) {
-				    var cfs =
-			               el.exitFullscreen
-			            || el.msExitFullscreen
-			            || el.mozCancelFullScreen
-			            || el.webkitExitFullscreen
-			            || el.webkitExitFullscreen
-				    ;
-				    cfs.call(el);
-				}
-				else {
-				    var rfs =
+			    var
+			          el = document.documentElement
+			        , rfs =
 			               el.requestFullScreen
 			            || el.webkitRequestFullScreen
 			            || el.mozRequestFullScreen
-				    ;
-				    rfs.call(el);
-				}
-
+			    ;
+			    rfs.call(el);
 			});
 
 			// Highlight the current image's thumbnail
