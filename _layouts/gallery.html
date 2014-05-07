@@ -190,11 +190,6 @@
 	    		});
 	    	}
 
-	    	// Go fullscreen if user clicks fullscreen button
-	    	$("#fullscreen").click( function() {
-	    		$(window).requestFullscreen();
-	    	});
-
     		// Switch image on keypress
 			$(document).keydown( function(e){
 				if (size > 1) {
@@ -290,6 +285,11 @@
 			    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
 			    });
 			});
+
+			// Go fullscreen if user clicks fullscreen button
+	    	$("#fullscreen").click( function() {
+	    		$("#gallery-full").requestFullscreen();
+	    	});
 		});
 
     </script>
