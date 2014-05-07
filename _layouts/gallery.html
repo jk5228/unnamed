@@ -284,7 +284,8 @@
 		</div>
 	</div>
 	<div id="panel">
-		<div id="gallery-title">Test Gallery</div>
+		<div id="gallery-title">{{ page.title }}</div>
+		<div id="gallery-info">{{ page.content }}</div>
 		{% for img in page.imgs %}
 			<img class="thumb" id="thumb{{ forloop.index }}" src="{{ site.url }}/imgs/{{ img }}">
 		{% endfor %}
