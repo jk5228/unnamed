@@ -195,12 +195,6 @@
 	    		});
 	    	}
 
-	    	// Highlight the current image's thumbnail
-	    	if (size > 1) {
-	    		$(".thumb").css('border','none');
-	    		$("#thumb" + (ind + 1)).css('border','solid 3px white');
-	    	}
-
     		// Switch image on keypress
 			$(document).keydown( function(e){
 				if (size > 1) {
@@ -226,9 +220,9 @@
 				temp = $(this).attr("id").substr(5) - 1;
 
 				if (temp != ind) {
-
+					$("this").css('border','none');
 					ind = temp;
-
+	    			$("#thumb" + (ind + 1)).css('border','solid 3px white');
 					$('#image').fadeOut(300, function(){
 				    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
 				    });
