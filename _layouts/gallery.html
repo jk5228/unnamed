@@ -82,6 +82,12 @@
 				        $("#nav1").slideUp("ease-in-out");
 				    }, 3000);
     			}
+    			else if (e.pageY < navY + sensitivity) {
+    				$("#nav1").slideDown("ease-in-out");
+    				setTimeout(function() {
+				        $("#nav1").slideUp("ease-in-out");
+				    }, 3000);
+    			}
     		});
 
     		// Switch image on keypress
