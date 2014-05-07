@@ -102,8 +102,8 @@
     		});
 
     		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
-    		var panelY = $("#panel").css("height");
-    		alert(panelY);
+    		var panelY = $("#panel").height();
+    		
 			if (size > 1) {
 
 				$("#panel").show();
@@ -113,10 +113,10 @@
 			    }, 3000);
 
 	    		$(document).mousemove( function(e) {
-	    			if (e.pageY + 'px' > panelY && $("#panel").css('display') == 'none') {
+	    			if (e.pageY > panelY && $("#panel").css('display') == 'none') {
 	    				$("#panel").fadeIn("ease-in-out");
 	    			}
-	    			else if (e.pageY + 'px' <= panelY) {
+	    			else if (e.pageY <= panelY) {
 					    $("#panel").fadeOut("ease-in-out");
 	    			}
 	    		});
