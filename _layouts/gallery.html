@@ -288,7 +288,12 @@
 			    var el = document.documentElement;
 
 	    		if (!window.screenTop && !window.screenY) {
-				    el.exitfs();
+				    var cfs =
+			               el.cancelFullScreen
+			            || el.webkitCancelFullScreen
+			            || el.mozCancelFullScreen
+				    ;
+				    rfs.call(el);
 				}
 				else {
 				    var rfs =
