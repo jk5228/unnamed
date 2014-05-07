@@ -152,7 +152,7 @@
     		var navY = $("#nav1").height() + $("#nav1").outerHeight(true);
     		setTimeout(function() {
 		        $("#nav1").fadeOut(200);
-		    }, 3000);
+		    }, 5000);
 
     		var navSensitivity = 10;
     		$(document).mousemove( function(e) {
@@ -173,7 +173,7 @@
 
     		setTimeout(function() {
 		        $("#panel").fadeOut(200);
-		    }, 3000);
+		    }, 5000);
 
     		var panelSensitivity = 40;
     		$(document).mousemove( function(e) {
@@ -232,7 +232,7 @@
 
 	    		setTimeout(function() {
 			        $("#leftarr").fadeOut(200);
-			    }, 2000);
+			    }, 5000);
 
 	    		$(document).mousemove( function(e) {
 	    			if (e.pageX < leftX + arrSensitivity && $("#leftarr").css('display') == 'none') {
@@ -253,7 +253,7 @@
 
 	    		setTimeout(function() {
 			        $("#rightarr").fadeOut(200);
-			    }, 3000);
+			    }, 5000);
 
 	    		$(document).mousemove( function(e) {
 	    			if (e.pageX > rightX - arrSensitivity && $("#rightarr").css('display') == 'none') {
