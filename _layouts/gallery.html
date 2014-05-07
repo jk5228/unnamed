@@ -76,8 +76,8 @@
 
     		var sensitivity = 10;
     		$(document).mousemove( function(e) {
-    			alert(e.pageY);
     			if (e.pageY < navY + sensitivity) {
+    				alert("too close!");
     				$("#nav1").slidedown();
     				setTimeout(function() {
 				        $("#nav1").slideup();
