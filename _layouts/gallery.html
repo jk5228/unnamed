@@ -288,9 +288,16 @@
 			});
 
 			// Go fullscreen if user clicks fullscreen button
-	    	$("#fullscreen").click( function() {
-	    		$("#gallery-full").webkit-requestFullscreen();
-	    	});
+	    	document.getElementById("fullscreen").addEventListener("click", function() {
+			    var
+			          el = document.documentElement
+			        , rfs =
+			               el.requestFullScreen
+			            || el.webkitRequestFullScreen
+			            || el.mozRequestFullScreen
+			    ;
+			    rfs.call(el);
+			});
 		});
 
     </script>
