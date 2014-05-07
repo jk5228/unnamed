@@ -50,8 +50,23 @@
     <script type="text/javascript">
 
     	$(document).ready( function() {
+    		
+    		// Set size to number of images in gallery
     		var size = {{ page.imgs.size }};
-    		alert(size);
+
+    		var imgs = [
+    			{% for img in page.imgs %}
+	    			"{{ page.imgs[forloop.index] }}"
+	    			{% if forloop.index != page.imgs.size %}
+	    				,
+	    			{% endif %}
+	    		{% endfor %}
+    		];
+
+    		for(var i = 1; i <= size; i++) {
+    			alert(imgs[i]);
+    		}
+
 			$(document).keydown(function(e){
 			    if (e.keyCode == 37) {
 			       alert( "left pressed" );
