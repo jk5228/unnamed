@@ -116,7 +116,7 @@
 	    			if (e.pageY > panelY + sensitivity && $("#panel").css('display') == 'none') {
 	    				$("#panel").fadeIn("ease-in-out");
 	    			}
-	    			if (e.pageY <= panelY + sensitivity) {
+	    			else if (e.pageY <= panelY + sensitivity) {
 					    $("#panel").fadeOut("ease-in-out");
 	    			}
 	    		});
