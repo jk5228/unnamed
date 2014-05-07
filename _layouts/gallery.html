@@ -264,6 +264,7 @@
 
 	    		$(document).mousemove( function(e) {
 	    			if (e.pageX > rightX - arrSensitivity && $("#rightarr").css('display') == 'none') {
+	    				alert("mouse!");
 	    				$("#rightarr").fadeIn(200);
 	    			}
 	    			else if (e.pageX <= rightX - arrSensitivity) {
