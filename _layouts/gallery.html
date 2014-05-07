@@ -196,11 +196,6 @@
 	    		});
 	    	}
 
-	    	$(document).click( function(e) {
-	    		$(".thumb").css('border','none');
-	    		$("#thumb" + ind - 1).css('border','solid 3px white');
-	    	});
-
     		// Switch image on keypress
 			$(document).keydown( function(e){
 				if (size > 1) {
@@ -287,8 +282,6 @@
 
 				$('#image').fadeOut(300, function(){
 			    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
-			    	$(".thumb").css('border','none');
-	    			$("#thumb" + (ind + 1)).css('border','solid 3px white');
 			    });
 			});
 
@@ -298,8 +291,6 @@
 
 				$('#image').fadeOut(300, function(){
 			    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
-			    	$(".thumb").css('border','none');
-	    			$("#thumb" + (ind + 1)).css('border','solid 3px white');
 			    });
 			});
 
@@ -317,6 +308,11 @@
 
 			// Highlight the current image's thumbnail
 	    	$(document).keydown( function(e) {
+	    		$(".thumb").css('border','none');
+	    		$("#thumb" + (ind + 1)).css('border','solid 3px white');
+	    	});
+
+	    	$(".thumb").keydown( function(e) {
 	    		$(".thumb").css('border','none');
 	    		$("#thumb" + (ind + 1)).css('border','solid 3px white');
 	    	});
