@@ -195,6 +195,8 @@
 				}
 			});
 
+			var arrSensitivity = 30;
+
 			// Show left navigation arrows if cursor is near left edge of screen (and for first three seconds after DOM loads)
     		var leftX = $("#leftarr").width();
     		
@@ -206,12 +208,11 @@
 			        $("#leftarr").fadeOut(200, function(){});
 			    }, 3000);
 
-	    		var leftSensitivity = 10;
 	    		$(document).mousemove( function(e) {
-	    			if (e.pageX < leftX + leftSensitivity && $("#leftarr").css('display') == 'none') {
+	    			if (e.pageX < leftX + arrSensitivity && $("#leftarr").css('display') == 'none') {
 	    				$("#leftarr").fadeIn(200, function(){});
 	    			}
-	    			else if (e.pageX >= leftX + leftSensitivity) {
+	    			else if (e.pageX >= leftX + arrSensitivity) {
 					    $("#leftarr").fadeOut(200, function(){});
 	    			}
 	    		});
