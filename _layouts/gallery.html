@@ -195,12 +195,6 @@
 	    		});
 	    	}
 
-	    	// Highlight the current image's thumbnail
-	    	$(document).keydown( function(e) {
-	    		$(".thumb").css('border','none');
-	    		$("#thumb" + (ind + 1)).css('border','solid 3px white');
-	    	});
-
 	    	$(document).click( function(e) {
 	    		$(".thumb").css('border','none');
 	    		$("#thumb" + ind - 1).css('border','solid 3px white');
@@ -313,6 +307,12 @@
 			    ;
 			    rfs.call(el);
 			});
+
+			// Highlight the current image's thumbnail
+	    	$(document).keydown( function(e) {
+	    		$(".thumb").css('border','none');
+	    		$("#thumb" + ind).css('border','solid 2px white');
+	    	});
 		});
 
     </script>
