@@ -1,8 +1,8 @@
 ---
 layout: gallery
 title: Summer Photos 2
-cover: beinecke.jpg
-imgs: [beinecke.jpg, habakkuk.jpg, northcourt.jpg]
+cover: habakkuk.jpg
+imgs: [habakkuk.jpg, beinecke.jpg, northcourt.jpg]
 tags: [Gallery]
 ---
 
