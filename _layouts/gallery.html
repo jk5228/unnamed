@@ -93,10 +93,10 @@
 
     		var navSensitivity = 10;
     		$(document).mousemove( function(e) {
-    			if (e.pageY < navY + sensitivity && $("#nav1").css('display') == 'none') {
+    			if (e.pageY < navY + navSensitivity && $("#nav1").css('display') == 'none') {
     				$("#nav1").fadeIn("ease-in-out");
     			}
-    			else if (e.pageY >= navY + sensitivity) {
+    			else if (e.pageY >= navY + navSensitivity) {
 				    $("#nav1").fadeOut("ease-in-out");
     			}
     		});
