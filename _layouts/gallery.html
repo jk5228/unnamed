@@ -71,7 +71,7 @@
     		// Show nav bar if cursor is nearby (and for first three seconds after DOM loads)
     		var navY = $("#nav1").height() + $("#nav1").outerHeight(true);
     		setTimeout(function() {
-		        $("#nav1").slideUp("ease-in-out");
+		        $("#nav1").fadeOut("ease-in-out");
 		    }, 3000);
 
     		var sensitivity = 10;
@@ -80,9 +80,9 @@
 
     			}
     			else if (e.pageY < navY + sensitivity) {
-    				$("#nav1").slideDown("ease-in-out");
+    				$("#nav1").fadeIn("ease-in-out");
     				setTimeout(function() {
-				        $("#nav1").slideUp("ease-in-out");
+				        $("#nav1").fadeOut("ease-in-out");
 				    }, 3000);
     			}
     		});
