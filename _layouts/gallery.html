@@ -100,7 +100,7 @@
     		});
 
     		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
-    		var panelY = $("#panel").height() + $("#panel").outerHeight(true);
+    		var panelY = $("#panel").height();
     		
 			if (size > 1) {
 
@@ -110,10 +110,10 @@
 
 	    		var sensitivity = 10;
 	    		$(document).mousemove( function(e) {
-	    			if (e.pageY < panelY + sensitivity && $("#panel").css('display') == 'none') {
+	    			if (e.pageY > panelY + sensitivity && $("#panel").css('display') == 'none') {
 	    				$("#panel").fadeIn("ease-in-out");
 	    			}
-	    			else if (e.pageY >= panelY + sensitivity) {
+	    			else if (e.pageY <= panelY + sensitivity) {
 					    $("#panel").fadeOut("ease-in-out");
 	    			}
 	    		});
