@@ -165,7 +165,7 @@
     		});
 
     		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
-    		var panelY = $(window).height() - $("#panel").height();
+    		var panelY = $(window).height() - $("#panel").height() - $("#nav1").outerHeight(true);
 
 			if (size > 1) {
 				$(".thumb").css('display','inline-block');
