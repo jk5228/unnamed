@@ -94,10 +94,10 @@
     		var navSensitivity = 10;
     		$(document).mousemove( function(e) {
     			if (e.pageY < navY + navSensitivity && $("#nav1").css('display') == 'none') {
-    				$("#nav1").fadeIn("ease-in-out");
+    				$("#nav1").fadeIn(100, "ease-in-out");
     			}
     			else if (e.pageY >= navY + navSensitivity) {
-				    $("#nav1").fadeOut("ease-in-out");
+				    $("#nav1").fadeOut(100, "ease-in-out");
     			}
     		});
 
@@ -109,16 +109,16 @@
 				$("#panel").show();
 
 	    		setTimeout(function() {
-			        $("#panel").fadeOut("ease-in-out");
+			        $("#panel").fadeOut(100, "ease-in-out");
 			    }, 3000);
 
 	    		var panelSensitivity = 10;
 	    		$(document).mousemove( function(e) {
 	    			if (e.pageY > panelY - panelSensitivity && $("#panel").css('display') == 'none') {
-	    				$("#panel").fadeIn("ease-in-out");
+	    				$("#panel").fadeIn(100, "ease-in-out");
 	    			}
 	    			else if (e.pageY <= panelY - panelSensitivity) {
-					    $("#panel").fadeOut("ease-in-out");
+					    $("#panel").fadeOut(100, "ease-in-out");
 	    			}
 	    		});
 	    	}
