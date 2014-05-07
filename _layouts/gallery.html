@@ -107,7 +107,7 @@
 			       ind = (ind + size - 1) % size;
 			       $('#image').fadeOut(300, function(){
 				      $(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').bind('onreadystatechange load', function(){
-				         if (this.complete) $(this).fadeIn(300);
+				         $(this).fadeIn(300);
 				      });
 				   });
 			       return false;
@@ -116,7 +116,7 @@
 			       ind = (ind + 1) % size;
 			       $('#image').fadeOut(300, function(){
 				      $(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').bind('onreadystatechange load', function(){
-				         if (this.complete) $(this).fadeIn(300);
+				         $(this).fadeIn(300);
 				      });
 				   });
 			       // $("#gallery-full").css('opacity', '0');
