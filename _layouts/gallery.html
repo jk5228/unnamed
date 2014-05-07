@@ -82,13 +82,17 @@
 			user-select: none;
 			cursor: default;
 		}
+		#leftarr {
+			left: 1%;
+		}
+		#rightarr {
+			right: 1%;
+		}
 		#left {
 			display: table-cell;
-			left: 1%;
 		}
 		#right {
 			display: table-cell;
-			right: 1%;
 		}
 
 		}
@@ -221,10 +225,10 @@
 	</div>
 	<div id="gallery-full">
 		<div id="image"></div>
-		<div class="arrow">
+		<div class="arrow" id="leftarr">
 			<div id="left"><</div>
 		</div>
-		<div class="arrow">
+		<div class="arrow" id="rightarr">
 			<div id="right">></div>
 		</div>
 	</div>
