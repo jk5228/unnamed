@@ -72,10 +72,8 @@
     			if (e.pageY < navY + sensitivity && $("#nav1").css('display') == 'none') {
     				$("#nav1").fadeIn("ease-in-out");
     			}
-    			else if (e.pageY >= navY + sensitivity && $("#nav1").css('display') != 'none') {
-    				setTimeout(function() {
-				        $("#nav1").fadeOut("ease-in-out");
-				    }, 3000);
+    			else if (e.pageY >= navY + sensitivity) {
+				    $("#nav1").fadeOut("ease-in-out");
     			}
     		});
 
@@ -87,14 +85,11 @@
 
     		var sensitivity = 10;
     		$(document).mousemove( function(e) {
-    			if (e.pageY > panelY + sensitivity && $("#panel").css('display') != 'none') {
-
-    			}
-    			else if (e.pageY > panelY + sensitivity) {
+    			if (e.pageY < panelY + sensitivity && $("#panel").css('display') == 'none') {
     				$("#panel").fadeIn("ease-in-out");
-    				setTimeout(function() {
-				        $("#panel").fadeOut("ease-in-out");
-				    }, 3000);
+    			}
+    			else if (e.pageY >= panelY + sensitivity) {
+				    $("#panel").fadeOut("ease-in-out");
     			}
     		});
 
@@ -124,7 +119,7 @@
 	</div>
 	<div class="opening" id="gallery-full"></div>
 	<div id="panel">
-		
+
 	</div>
 </body>
 </html>
