@@ -114,10 +114,10 @@
 
 	    		var panelSensitivity = 10;
 	    		$(document).mousemove( function(e) {
-	    			if (e.pageY + panelSensitivity > panelY && $("#panel").css('display') == 'none') {
+	    			if (e.pageY > panelY + panelSensitivity && $("#panel").css('display') == 'none') {
 	    				$("#panel").fadeIn("ease-in-out");
 	    			}
-	    			else if (e.pageY + panelSensitivity <= panelY) {
+	    			else if (e.pageY <= panelY + panelSensitivity) {
 					    $("#panel").fadeOut("ease-in-out");
 	    			}
 	    		});
