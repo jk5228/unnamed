@@ -46,9 +46,7 @@
 		}
 		#panel {
 			z-index: 1;
-			min-width: 100%;
-			overflow-x: scroll;
-			overflow-y: hidden;
+			width: 100%;
 			position: absolute;
 			bottom: 0%;
 			background-color: rgba(0,0,0,0.8);
@@ -160,10 +158,10 @@
 	    		{% endfor %}
     		];
 
-    		// Sets panel width to fit thumbnails
-	    	var width = $('#panel img').size();
-	    	var elev = $(window).width() * 0.11;
-	    	$('#bar1').css('width', (width * elev) + 'px');
+    		// // Sets panel width to fit thumbnails
+	    	// var width = $('#panel img').size();
+	    	// var elev = $(window).width() * 0.11;
+	    	// $('#bar1').css('width', (width *  + 2) + 'em');
 
     		// Image index in array
     		var ind = 0;
