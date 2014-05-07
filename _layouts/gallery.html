@@ -49,6 +49,19 @@
 			bottom: 0%;
 			background-color: rgba(0,0,0,0.8);
 		}
+		.thumb {
+			position: relative;
+			display: inline-block;
+			float: left;
+			height: 8%;
+			width: auto;
+			margin: 1em;
+		}
+		{% for img in page.imgs %}
+			#thumb{{ forloop.index }} {
+				background-image: url('{{ site.url }}/imgs/{{ img }}');
+			}
+		{% endfor %}
     </style>
 
     <script type="text/javascript" src="{{ site.url }}/jquery-1.9.1.min.js"></script>
@@ -145,7 +158,9 @@
 		<div id="image"></div>
 	</div>
 	<div id="panel">
-
+		{% for img in page.imgs %}
+			<div class="thumb" id="thumb{{ forloop.index }}"></div>
+		{% endfor %}
 	</div>
 </body>
 </html>
