@@ -57,7 +57,7 @@
     		var imgs = [
     			{% for img in page.imgs %}
 	    			"{{ page.imgs[forloop.index] }}"
-	    			{% if forloop.index != page.imgs.size %}
+	    			{% if forloop.index + 1 != page.imgs.size %}
 	    				,
 	    			{% endif %}
 	    		{% endfor %}
