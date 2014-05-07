@@ -69,7 +69,7 @@
 		}
 		.thumb {
 			z-index: 2;
-			display: inline-block;
+			display: none;
 			vertical-align: middle;
 			max-height: 10%;
 			max-width: 10%;
@@ -168,9 +168,11 @@
     		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
     		var panelY = $(window).height() - $("#panel").height();
     		
+				$("#panel").show();
+
 			if (size > 1) {
 
-				$("#panel").show();
+				$(".thumb").css('display','inline-block');
 
 	    		setTimeout(function() {
 			        $("#panel").fadeOut(200);
