@@ -156,6 +156,7 @@
 
     		// Image index in array
     		var ind = 0;
+    		$("#thumb1").css('border','solid 3px white');
 
     		// Show nav bar if cursor is nearby (and for first three seconds after DOM loads)
     		var navY = $("#nav1").height() + $("#nav1").outerHeight(true);
@@ -311,7 +312,7 @@
 			// Highlight the current image's thumbnail
 	    	$(document).keydown( function(e) {
 	    		$(".thumb").css('border','none');
-	    		$("#thumb" + (ind + 1)).css('border','solid 2px white');
+	    		$("#thumb" + (ind + 1)).css('border','solid 3px white');
 	    	});
 		});
 
