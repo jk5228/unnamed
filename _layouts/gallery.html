@@ -176,16 +176,16 @@
     		// Show nav bar if cursor is nearby (and for first three seconds after DOM loads)
     		var navY = $("#nav1").height() + $("#nav1").outerHeight(true);
     		setTimeout(function() {
-		        $("#nav1").fadeOut(200, function(){});
+		        $("#nav1").fadeOut(200);
 		    }, 3000);
 
     		var navSensitivity = 10;
     		$(document).mousemove( function(e) {
     			if (e.pageY < navY + navSensitivity && $("#nav1").css('display') == 'none') {
-    				$("#nav1").fadeIn(200, function(){});
+    				$("#nav1").fadeIn(200);
     			}
     			else if (e.pageY >= navY + navSensitivity) {
-				    $("#nav1").fadeOut(200, function(){});
+				    $("#nav1").fadeOut(200);
     			}
     		});
 
@@ -197,16 +197,16 @@
 				$("#panel").show();
 
 	    		setTimeout(function() {
-			        $("#panel").fadeOut(200, function(){});
+			        $("#panel").fadeOut(200);
 			    }, 3000);
 
 	    		var panelSensitivity = 20;
 	    		$(document).mousemove( function(e) {
 	    			if (e.pageY > panelY - panelSensitivity && $("#panel").css('display') == 'none') {
-	    				$("#panel").fadeIn(200, function(){});
+	    				$("#panel").fadeIn(200);
 	    			}
 	    			else if (e.pageY <= panelY - panelSensitivity) {
-					    $("#panel").fadeOut(200, function(){});
+					    $("#panel").fadeOut(200);
 	    			}
 	    		});
 	    	}
@@ -241,7 +241,7 @@
 
 					$.when( $(".thumb").css('border','none') ).then( $("#thumb" + (ind + 1)).css('border','solid 3px white') );
 
-					$('#image').fadeOut(300, function(){
+					$('#image').fadeOut(200, function(){
 				    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(300);
 				    });
 				}
@@ -257,15 +257,15 @@
 				$("#leftarr").show();
 
 	    		setTimeout(function() {
-			        $("#leftarr").fadeOut(200, function(){});
+			        $("#leftarr").fadeOut(200);
 			    }, 3000);
 
 	    		$(document).mousemove( function(e) {
 	    			if (e.pageX < leftX + arrSensitivity && $("#leftarr").css('display') == 'none') {
-	    				$("#leftarr").fadeIn(200, function(){});
+	    				$("#leftarr").fadeIn(200);
 	    			}
 	    			else if (e.pageX >= leftX + arrSensitivity) {
-					    $("#leftarr").fadeOut(200, function(){});
+					    $("#leftarr").fadeOut(200);
 	    			}
 	    		});
 	    	}
@@ -278,15 +278,15 @@
 				$("#rightarr").show();
 
 	    		setTimeout(function() {
-			        $("#rightarr").fadeOut(200, function(){});
+			        $("#rightarr").fadeOut(200);
 			    }, 3000);
 
 	    		$(document).mousemove( function(e) {
 	    			if (e.pageX > rightX - arrSensitivity && $("#rightarr").css('display') == 'none') {
-	    				$("#rightarr").fadeIn(200, function(){});
+	    				$("#rightarr").fadeIn(200);
 	    			}
 	    			else if (e.pageX <= rightX - arrSensitivity) {
-					    $("#rightarr").fadeOut(200, function(){});
+					    $("#rightarr").fadeOut(200);
 	    			}
 	    		});
 	    	}
