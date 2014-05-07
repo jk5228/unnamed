@@ -50,6 +50,7 @@
 			position: fixed;
 			bottom: 0%;
 			background-color: rgba(0,0,0,0.8);
+			display: none;
 		}
 		.thumb {
 			z-index: 2;
@@ -104,6 +105,8 @@
     		
 			if (size > 1) {
 
+				$("#panel").show();
+
 	    		setTimeout(function() {
 			        $("#panel").fadeOut("ease-in-out");
 			    }, 3000);
@@ -117,9 +120,6 @@
 					    $("#panel").fadeOut("ease-in-out");
 	    			}
 	    		});
-	    	}
-	    	else {
-	    		$("#panel").hide();
 	    	}
 
     		// Switch image on keypress
