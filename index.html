@@ -293,9 +293,11 @@
 				{% for p in site.posts %}
 					{% if forloop.index <= 5 %}
 				<div class="post">
-					<div class="postdate">{{ p.date | date: "%B %-d, %Y" }}</div>
-					<a href="{{ p.url }}"><div class="postimg" id="post{{ forloop.index }}"></div></a>
-					<div class="posttitle">{{ p.title }}</div>
+					<a href="{{ p.url }}">
+						<div class="postdate">{{ p.date | date: "%B %-d, %Y" }}</div>
+						<div class="postimg" id="post{{ forloop.index }}"></div>
+						<div class="posttitle">{{ p.title }}</div>
+					</a>
 				</div>
 					{% else %}
 						{% break %}
