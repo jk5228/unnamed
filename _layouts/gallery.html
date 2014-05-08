@@ -110,7 +110,7 @@
 			background-image: url('{{ site.url }}/imgs/rightarr.png');
 		}
 		#gallery-title {
-			font-family: "Raleway", Helvetica Neue, sans-serif;
+			font-family: garamond, georgia, sans-serif;
 			font-size: 1.5em;
 			color: white;
 			margin-top: 1%;
@@ -118,6 +118,14 @@
 			margin-right: 1%;
 		}
 		#gallery-info {
+			font-family: garamond, georgia, sans-serif;
+			font-size: 1em;
+			color: white;
+			margin-top: 1%;
+			margin-left: 1%;
+			margin-right: 1%;
+		}
+		#gallery-date {
 			font-family: "Raleway", Helvetica Neue, sans-serif;
 			font-size: 1em;
 			color: white;
@@ -327,7 +335,7 @@
 	<div id="panel">
 		<div id="fullscreen"></div>
 		<div id="gallery-title">{{ page.title }}</div>
-		<div id="gallery-info">{{ page.date | date: "%B %-d, %Y" }}</div>
+		<div id="gallery-date">{{ page.date | date: "%B %-d, %Y" }}</div>
 		<div id="gallery-info">{{ page.content | markdownify }}</div>
 			{% for img in page.imgs %}
 				<img class="thumb" id="thumb{{ forloop.index }}" src="{{ site.url }}/imgs/{{ img }}">
