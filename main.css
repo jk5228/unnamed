@@ -217,6 +217,13 @@ a:hover {
 .date {
 	font-weight: 300;
 }
-#gallery-full {
-
+.tag {
+	position: relative;
+	width: 15em;
+	float: left;
+	color: white;
+	margin: 0%;
+	padding: 0%;
+	margin-bottom: 2em;
+	margin-left: 2em;
 }
