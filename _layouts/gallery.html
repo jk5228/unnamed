@@ -155,7 +155,7 @@
 
     		// Image index in array
     		var ind = 0;
-    		$("#thumb1").css('border','solid 3px #57A5FF');
+    		$("#thumb1").css('border','solid 3px #337ACC');
 
     		// Show nav bar if cursor is nearby (and for first three seconds after DOM loads)
     		var navY = $("#nav1").height() + $("#nav1").outerHeight(true);
@@ -222,7 +222,7 @@
 
 					ind = temp;
 
-					$.when( $(".thumb").css('border','none') ).then( $("#thumb" + (ind + 1)).css('border','solid 3px #57A5FF') );
+					$.when( $(".thumb").css('border','none') ).then( $("#thumb" + (ind + 1)).css('border','solid 3px #337ACC') );
 
 					$('#image').fadeOut(200, function(){
 				    	$(this).css('background-image','url(\'{{ site.url }}/imgs/' + imgs[ind] + '\'\)').fadeIn(200);
@@ -307,12 +307,12 @@
 			// Highlight the current image's thumbnail
 	    	$(document).keydown( function(e) {
 	    		$(".thumb").css('border','none');
-	    		$("#thumb" + (ind + 1)).css('border','solid 3px #57A5FF');
+	    		$("#thumb" + (ind + 1)).css('border','solid 3px #337ACC');
 	    	});
 
 	    	$(".thumb, .arrow").click( function(e) {
 	    		$(".thumb").css('border','none');
-	    		$("#thumb" + (ind + 1)).css('border','solid 3px #57A5FF');
+	    		$("#thumb" + (ind + 1)).css('border','solid 3px #337ACC');
 	    	});
 		});
 
