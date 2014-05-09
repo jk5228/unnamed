@@ -369,10 +369,10 @@
 		<div class="tags">
 		{% for item in (0..site.tags.size) %}{% unless forloop.last %}
 			{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-			<div class="tag">{{ this_word }} <span>{{ site.tags[this_word].size }}</span></div>
+			<div class="tag"><h2>{{ this_word }} <span>{{ site.tags[this_word].size }}</span></h2></div>
 			{% endunless %}{% endfor %}
 		</div>
-		 
+
 		{% for item in (0..site.tags.size) %}{% unless forloop.last %}
 		{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
 		<div class="tags">
