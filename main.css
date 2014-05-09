@@ -217,7 +217,7 @@ a:hover {
 .date {
 	font-weight: 300;
 }
-.tag {
+.tags {
 	position: relative;
 	width: 15em;
 	float: left;
@@ -226,4 +226,13 @@ a:hover {
 	padding: 0%;
 	margin-bottom: 2em;
 	margin-left: 2em;
+}
+.tag {
+	position: static;
+	width: 15em;
+	color: white;
+	margin: 0%;
+	padding: 0%;
+	margin-bottom: 2em;
+	padding-left: 2em;
 }
