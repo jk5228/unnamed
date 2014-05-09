@@ -367,20 +367,20 @@
 		{% assign tag_words = site_tags | split:',' | sort %}
 
 		<div class="tags">
-		{% for item in (0..site.tags.size) %}{% unless forloop.last %}
-			{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-			<div class="tag"><h2>{{ this_word }} <span>{{ site.tags[this_word].size }}</span></h2></div>
+			{% for item in (0..site.tags.size) %}{% unless forloop.last %}
+				{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+				<div class="tag"><h2>{{ this_word }} <span>{{ site.tags[this_word].size }}</span></h2></div>
 			{% endunless %}{% endfor %}
 		</div>
 
 		{% for item in (0..site.tags.size) %}{% unless forloop.last %}
-		{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-		<div class="tags">
-		<h2 id="{{ this_word | cgi_escape }}">{{ this_word }}</h2>
-		{% for post in site.tags[this_word] %}{% if post.title != null %}
-		<li itemscope><span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-		{% endif %}{% endfor %}
-		</div>
+			{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+			<div class="tags">
+				<h2 id="{{ this_word | cgi_escape }}">{{ this_word }}</h2>
+				{% for post in site.tags[this_word] %}{% if post.title != null %}
+				<div class="tag"><span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></div>
+				{% endif %}{% endfor %}
+			</div>
 		{% endunless %}{% endfor %}
 	</div>
 	<div class="content" id="about-div">
