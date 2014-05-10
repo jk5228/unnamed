@@ -197,6 +197,11 @@
 	    		}
 	    	});
 
+	    	// Prevent page scroll while hovering tags div
+	    	$('.tags').mousemove( function () {
+	    		ev.stopPropagation();
+	    	});
+
 	  //   	// Prevents mouse scrolling
 	  //   	$('body, html').on({
 			// 'mousewheel': function(e, delta) {
