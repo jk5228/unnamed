@@ -37,7 +37,7 @@ a:visited {
 	text-decoration: none;
 }
 a:hover {
-	color: #337ACC;
+	color: #40AFFF;
 	text-decoration: none;
 }
 .navbar {
@@ -251,7 +251,7 @@ a:hover {
 	cursor: pointer;
 }
 .tag:hover {
-	color: #337ACC;
+	color: #40AFFF;
 }
 .post-date {
 	margin-left: 1em;
