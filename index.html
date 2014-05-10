@@ -416,6 +416,8 @@
 				<div class="post-name"><a href="{{ post.url }}">{{ post.title }}</a></div>
 				<div class="post-date"><span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %-d, %Y" }}</time></span></div>
 				{% endif %}{% endfor %}
+				<br/>
+				<br/>
 			</div>
 		{% endunless %}{% endfor %}
 	</div>
