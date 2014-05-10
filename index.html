@@ -215,83 +215,83 @@
 			    }
 			});
 
-	    	// Prevents mouse scrolling
-	    	$('body, html').on({
-			'mousewheel': function(e, delta) {
-			    if (e.target.id == 'el') return;
-      			var scrolled = $('#postcontainer').scrollLeft();
-      			$('#postcontainer').scrollLeft(scrolled - delta);
-			    e.preventDefault();
-			    e.stopPropagation();
-			    }
-			});
+	  //   	// Prevents mouse scrolling
+	  //   	$('body, html').on({
+			// 'mousewheel': function(e, delta) {
+			//     if (e.target.id == 'el') return;
+   //    			var scrolled = $('#postcontainer').scrollLeft();
+   //    			$('#postcontainer').scrollLeft(scrolled - delta);
+			//     e.preventDefault();
+			//     e.stopPropagation();
+			//     }
+			// });
 
-			// Disables arrow, return, and page up/down key presses
-			var ar = new Array(13, 33, 34, 38, 40);
-			var disableArrowKeys = function(e) {
-			    if ($.inArray(e.keyCode, ar)>=0) {
-			        e.preventDefault();
-			        e.stopPropagation();
-			    }
-			}
+			// // Disables arrow, return, and page up/down key presses
+			// var ar = new Array(13, 33, 34, 38, 40);
+			// var disableArrowKeys = function(e) {
+			//     if ($.inArray(e.keyCode, ar)>=0) {
+			//         e.preventDefault();
+			//         e.stopPropagation();
+			//     }
+			// }
 
-			// Scrolls recent posts based on mouse position
-			$(function(){
+			// // Scrolls recent posts based on mouse position
+			// $(function(){
 
-			    var $bl    = $("#postcontainer"),
-			        $th    = $(".post"),
-			        blW    = $bl.outerWidth(),
-			        blSW   = $bl[0].scrollWidth,
-			        wDiff  = (blSW/blW)-1,  // widths difference ratio
-			        mPadd  = 60,  // Mousemove Padding
-			        damp   = 20,  // Mousemove response softness
-			        mX     = 20,   // Real mouse position
-			        mX2    = 0,   // Modified mouse position
-			        posX   = 0,
-			        mmAA   = blW-(mPadd*2), // The mousemove available area
-			        mmAAr  = (blW/mmAA);    // get available mousemove fidderence ratio
+			//     var $bl    = $("#postcontainer"),
+			//         $th    = $(".post"),
+			//         blW    = $bl.outerWidth(),
+			//         blSW   = $bl[0].scrollWidth,
+			//         wDiff  = (blSW/blW)-1,  // widths difference ratio
+			//         mPadd  = 60,  // Mousemove Padding
+			//         damp   = 20,  // Mousemove response softness
+			//         mX     = 20,   // Real mouse position
+			//         mX2    = 0,   // Modified mouse position
+			//         posX   = 0,
+			//         mmAA   = blW-(mPadd*2), // The mousemove available area
+			//         mmAAr  = (blW/mmAA);    // get available mousemove fidderence ratio
 
-			    $bl.mousemove(function(e) {
-			        mX = e.pageX - this.offsetLeft;
-			        mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
-			    });
+			//     $bl.mousemove(function(e) {
+			//         mX = e.pageX - this.offsetLeft;
+			//         mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
+			//     });
 
-			    setInterval(function(){
-			        posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"    
-			        $bl.scrollLeft(posX*wDiff);
-			    }, 10);
+			//     setInterval(function(){
+			//         posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"    
+			//         $bl.scrollLeft(posX*wDiff);
+			//     }, 10);
 
-			});
+			// });
 
-			// Scrolls archived posts based on mouse position
-			$(function(){
+			// // Scrolls archived posts based on mouse position
+			// $(function(){
 
-			    var $bl    = $("#archivecontainer"),
-			        $th    = $(".year"),
-			        blW    = $bl.outerWidth(),
-			        blSW   = $bl[0].scrollWidth,
-			        wDiff  = (blSW/blW)-1,  // widths difference ratio
-			        mPadd  = 60,  // Mousemove Padding
-			        damp   = 20,  // Mousemove response softness
-			        mX     = 20,   // Real mouse position
-			        mX2    = 0,   // Modified mouse position
-			        posX   = 0,
-			        mmAA   = blW-(mPadd*2), // The mousemove available area
-			        mmAAr  = (blW/mmAA);    // get available mousemove fidderence ratio
+			//     var $bl    = $("#archivecontainer"),
+			//         $th    = $(".year"),
+			//         blW    = $bl.outerWidth(),
+			//         blSW   = $bl[0].scrollWidth,
+			//         wDiff  = (blSW/blW)-1,  // widths difference ratio
+			//         mPadd  = 60,  // Mousemove Padding
+			//         damp   = 20,  // Mousemove response softness
+			//         mX     = 20,   // Real mouse position
+			//         mX2    = 0,   // Modified mouse position
+			//         posX   = 0,
+			//         mmAA   = blW-(mPadd*2), // The mousemove available area
+			//         mmAAr  = (blW/mmAA);    // get available mousemove fidderence ratio
 
-			    $bl.mousemove(function(e) {
-			        mX = e.pageX - this.offsetLeft;
-			        mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
-			    });
+			//     $bl.mousemove(function(e) {
+			//         mX = e.pageX - this.offsetLeft;
+			//         mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
+			//     });
 
-			    setInterval(function(){
-			        posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"    
-			        $bl.scrollLeft(posX*wDiff);
-			    }, 10);
+			//     setInterval(function(){
+			//         posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"    
+			//         $bl.scrollLeft(posX*wDiff);
+			//     }, 10);
 
-			});
+			// });
 
-			$(document).keydown(disableArrowKeys);
+			// $(document).keydown(disableArrowKeys);
 
 	    	$('a[href*=#]:not([href=#])').click(function() {
 			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -441,7 +441,7 @@
 			There's not much to know about me, except that I'm not a robot. And I like coffee. And parkour.
 		</p>
 		<p>
-			I built this website from scratch (although I referenced Stack Exchange a lot for jQuery help). I opted for Jekyll on my end to make pushing new content easy while giving me lots of control over the site. The new Tags section should be done soon.
+			I built this website from scratch (although I referenced Stack Exchange a lot for jQuery help). I opted for Jekyll on my end to make pushing new content easy while giving me lots of control over the site.
 		</p>
 		<p>
 			I took all the photos used on this site. You can use any of them with attribution.
