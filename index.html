@@ -173,7 +173,11 @@
 	    		$(this).css('color','#337ACC');
 
 	    		var tag = $(this).attr('id').substr(5);
-		    	$.when( $(".tag-posts").css('display','none') ).then( $('#tag2-' + tag).fadeIn(300) );
+	    		var state = $('#tag2-' + tag).prop('display');
+
+	    		if (state == 'none') {
+		    		$.when( $(".tag-posts").css('display','none') ).then( $('#tag2-' + tag).fadeIn(300) );
+	    		}
 	    	});
 
 	  //   	// Prevents mouse scrolling
