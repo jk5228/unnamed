@@ -227,7 +227,7 @@ a:hover {
 	margin-bottom: 2em;
 	margin-left: 2em;
 }
-.tag {
+.tag, .tag-date {
 	position: static;
 	width: 15em;
 	color: white;
@@ -235,4 +235,7 @@ a:hover {
 	padding: 0%;
 	margin-bottom: 0.5em;
 	padding-left: 2em;
+}
+.tag-date {
+	margin-left: 2em;
 }
