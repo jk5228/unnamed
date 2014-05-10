@@ -155,33 +155,35 @@
 			        $("#panel").fadeOut(200);
 			    }, 5000);
 		    ).then(
-	    		// Show nav bar if cursor is nearby (and for first three seconds after DOM loads)
-	    		var navSensitivity = 10;
-	    		$(document).mousemove( function(e) {
-	    			if (e.pageY < navY + navSensitivity && $("#nav1").css('display') == 'none') {
-	    				$("#nav1").fadeIn(200);
-	    			}
-	    			else if (e.pageY >= navY + navSensitivity) {
-					    $("#nav1").fadeOut(200);
-	    			}
-	    		});
+		    	function () {
+		    		// Show nav bar if cursor is nearby (and for first three seconds after DOM loads)
+		    		var navSensitivity = 10;
+		    		$(document).mousemove( function(e) {
+		    			if (e.pageY < navY + navSensitivity && $("#nav1").css('display') == 'none') {
+		    				$("#nav1").fadeIn(200);
+		    			}
+		    			else if (e.pageY >= navY + navSensitivity) {
+						    $("#nav1").fadeOut(200);
+		    			}
+		    		});
 
-	    		var panelY = $(window).height() - $("#panel").height() - $("#nav1").outerHeight(true);
+		    		var panelY = $(window).height() - $("#panel").height() - $("#nav1").outerHeight(true);
 
-				if (size > 1) {
-					$(".thumb").css('display','inline-block');
-				}
+					if (size > 1) {
+						$(".thumb").css('display','inline-block');
+					}
 
-	    		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
-	    		var panelSensitivity = 40;
-	    		$(document).mousemove( function(e) {
-	    			if (e.pageY > panelY - panelSensitivity && $("#panel").css('display') == 'none') {
-	    				$("#panel").fadeIn(200);
-	    			}
-	    			else if (e.pageY <= panelY - panelSensitivity) {
-					    $("#panel").fadeOut(200);
-	    			}
-	    		});
+		    		// Show image list panel if cursor is nearby (and for first three seconds after DOM loads)
+		    		var panelSensitivity = 40;
+		    		$(document).mousemove( function(e) {
+		    			if (e.pageY > panelY - panelSensitivity && $("#panel").css('display') == 'none') {
+		    				$("#panel").fadeIn(200);
+		    			}
+		    			else if (e.pageY <= panelY - panelSensitivity) {
+						    $("#panel").fadeOut(200);
+		    			}
+		    		});
+		    	}
 		    );
 
 
