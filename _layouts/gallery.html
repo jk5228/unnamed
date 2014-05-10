@@ -154,7 +154,7 @@
 			        $("#nav1").fadeOut(200);
 			        $("#panel").fadeOut(200);
 			    }, 5000)
-		    ).resolve().done(
+		    ).then(
 		    	function () {
 		    		// Show nav bar if cursor is nearby (and for first three seconds after DOM loads)
 		    		var navSensitivity = 10;
