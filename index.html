@@ -377,7 +377,8 @@
 			{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
 			<div class="tags">
 				{% for post in site.tags[this_word] %}{% if post.title != null %}
-				<div class="tag"><span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></div>
+				<div class="tag"><a href="{{ post.url }}">{{ post.title }}</a></div>
+				<div class="tag"><span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span></div>
 				{% endif %}{% endfor %}
 			</div>
 		{% endunless %}{% endfor %}
