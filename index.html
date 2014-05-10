@@ -419,6 +419,8 @@
 				{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
 				<div class="tag" id="tag1-{{ this_word }}"><h2>{{ this_word }} <span>{{ site.tags[this_word].size }}</span></h2></div>
 			{% endunless %}{% endfor %}
+			<br/>
+			<br/>
 		</div>
 
 		{% for item in (0..site.tags.size) %}{% unless forloop.last %}
@@ -428,8 +430,6 @@
 				<div class="post-name"><a href="{{ post.url }}">{{ post.title }}</a></div>
 				<div class="post-date"><span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %-d, %Y" }}</time></span></div>
 				{% endif %}{% endfor %}
-				<br/>
-				<br/>
 			</div>
 		{% endunless %}{% endfor %}
 	</div>
