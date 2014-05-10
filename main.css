@@ -230,6 +230,8 @@ a:hover {
 	-webkit-transition: color 0.5s ease-in-out;
 	-moz-transition: color 0.5s ease-in-out;
 }
+.tag-posts {
+	display: none;
 }
 .tag, .post-name, .post-date {
 	position: static;
