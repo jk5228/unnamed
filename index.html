@@ -173,9 +173,7 @@
 	    		$(this).css('color','#337ACC');
 
 	    		var tag = $(this).attr('id').substr(5);
-	    		$('.tag-posts').fadeOut(100, function(){
-			    	$('#tag2-' + tag).fadeIn(300);
-			    });
+		    	$.when( $(".tag-posts").fadeOut(200) ).then( $('#tag2-' + tag).fadeIn(300) );
 	    	});
 
 	  //   	// Prevents mouse scrolling
