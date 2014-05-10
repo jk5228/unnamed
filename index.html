@@ -168,7 +168,16 @@
 	    	$('#bar3').css('width', (width * 17 + 2) + 'em');
 
 	    	// Reveals posts for a tag when tag name is clicked
-	    	$('.tag').
+	    	$('.tag').click( function () {
+	    		
+	    		$('.tag').css('color','white');
+	    		$(this).css('color','#337ACC');
+
+	    		var tag = $(this).attr('id').substr(5);
+	    		$('.tag-posts').fadeOut(300, function(){
+			    	$('#tag-' + tag).fadeIn(300);
+			    });
+	    	});
 
 	  //   	// Prevents mouse scrolling
 	  //   	$('body, html').on({
@@ -372,13 +381,13 @@
 		<div class="tags">
 			{% for item in (0..site.tags.size) %}{% unless forloop.last %}
 				{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-				<div class="tag"><h2>{{ this_word }} <span>{{ site.tags[this_word].size }}</span></h2></div>
+				<div class="tag" id="tag1-{{ this_word }}"><h2>{{ this_word }} <span>{{ site.tags[this_word].size }}</span></h2></div>
 			{% endunless %}{% endfor %}
 		</div>
 
 		{% for item in (0..site.tags.size) %}{% unless forloop.last %}
 			{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-			<div class="tags" id="tag-{{ this_word }}">
+			<div class="tag-posts" id="tag2-{{ this_word }}">
 				{% for post in site.tags[this_word] %}{% if post.title != null %}
 				<div class="post-name"><a href="{{ post.url }}">{{ post.title }}</a></div>
 				<div class="post-date"><span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %-d, %Y" }}</time></span></div>
