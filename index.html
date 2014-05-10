@@ -127,10 +127,15 @@
 		}
 		#tags-filter {
 			z-index: 5;
-			position: absolute;
-			top: 0%;
-			height: 100%;
-			width: 100%;
+			position: relative;
+			width: 15em;
+			height: 60%;
+			float: left;
+			color: white;
+			margin: 0%;
+			padding: 0%;
+			margin-bottom: 2em;
+			margin-left: 5%;
 			background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 3%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 97%, rgba(0,0,0,1) 100%);
 			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(3%,rgba(0,0,0,0)), color-stop(50%,rgba(0,0,0,0)), color-stop(97%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1)));
 			background: -o-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 3%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 97%,rgba(0,0,0,1) 100%);
@@ -390,8 +395,8 @@
 		{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 		{% assign tag_words = site_tags | split:',' | sort %}
 
+		<div id="tags-filter"></div>
 		<div class="tags">
-			<div id="tags-filter"></div>
 			{% for item in (0..site.tags.size) %}{% unless forloop.last %}
 				{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
 				<div class="tag" id="tag1-{{ this_word }}"><h2>{{ this_word }} <span>{{ site.tags[this_word].size }}</span></h2></div>
