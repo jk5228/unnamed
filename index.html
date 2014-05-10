@@ -169,11 +169,10 @@
 
 	    	// Reveals posts for a tag when tag name is clicked
 	    	$('.tag').click( function () {
-	    		
 	    		$('.tag').css('color','white');
 	    		$(this).css('color','#337ACC');
 
-	    		var tag = $(this).attr('id').substr(5);
+	    		var tag = $(this).attr('id').substr(4);
 	    		$('.tag-posts').fadeOut(300, function(){
 			    	$('#tag-' + tag).fadeIn(300);
 			    });
