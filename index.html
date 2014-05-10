@@ -173,6 +173,7 @@
 	    		$(this).css('color','#337ACC');
 
 	    		var tag = $(this).attr('id').substr(4);
+	    		alert(tag);
 	    		$('.tag-posts').fadeOut(300, function(){
 			    	$('#tag-' + tag).fadeIn(300);
 			    });
