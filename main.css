@@ -233,6 +233,7 @@ a:hover {
 .tags {
 	overflow-x: hidden;
 	overflow-y: scroll;
+	max-height: 60%;
 }
 .tag-posts {
 	display: none;
