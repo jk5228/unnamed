@@ -188,7 +188,7 @@
 	    	$('.tag').click( function () {
 	    		$('.tag').css('color','white');
 	    		$(this).css('color','#337ACC');
-	    		$(this 'span').css('color','white');
+	    		$(this).children().children().css('color','white');
 
 	    		var tag = $(this).attr('id').substr(5);
 	    		var state = $('#tag2-' + tag).css('display');
