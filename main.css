@@ -237,5 +237,6 @@ a:hover {
 	padding-left: 2em;
 }
 .tag-date {
-	margin-left: 2em;
+	margin-left: 1em;
+	font-weight: 100;
 }
