@@ -227,7 +227,7 @@ a:hover {
 	margin-bottom: 2em;
 	margin-left: 2em;
 }
-.tag, .tag-date {
+.tag, .post-name, .post-date {
 	position: static;
 	width: 15em;
 	color: white;
@@ -236,7 +236,7 @@ a:hover {
 	margin-bottom: 0.5em;
 	padding-left: 2em;
 }
-.tag-date {
+.post-date {
 	margin-left: 1em;
 	font-weight: 100;
 }

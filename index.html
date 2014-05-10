@@ -167,6 +167,9 @@
 	    	var width = $('#tags-div .tag').size();
 	    	$('#bar3').css('width', (width * 17 + 2) + 'em');
 
+	    	// Reveals posts for a tag when tag name is clicked
+	    	$('.tag')
+
 	  //   	// Prevents mouse scrolling
 	  //   	$('body, html').on({
 			// 'mousewheel': function(e, delta) {
@@ -377,8 +380,8 @@
 			{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
 			<div class="tags">
 				{% for post in site.tags[this_word] %}{% if post.title != null %}
-				<div class="tag"><a href="{{ post.url }}">{{ post.title }}</a></div>
-				<div class="tag-date"><span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %-d, %Y" }}</time></span></div>
+				<div class="post-name"><a href="{{ post.url }}">{{ post.title }}</a></div>
+				<div class="post-date"><span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %-d, %Y" }}</time></span></div>
 				{% endif %}{% endfor %}
 			</div>
 		{% endunless %}{% endfor %}
