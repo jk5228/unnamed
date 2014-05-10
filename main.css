@@ -240,6 +240,9 @@ a:hover {
 	margin-bottom: 0.5em;
 	padding-left: 2em;
 }
+.tag {
+	margin-left: 2em;
+}
 .post-date {
 	margin-left: 1em;
 	font-weight: 100;
