@@ -230,12 +230,6 @@ a:hover {
 	-webkit-transition: color 0.5s ease-in-out;
 	-moz-transition: color 0.5s ease-in-out;
 }
-.tags {
-	cursor: pointer;
-}
-.tags:hover {
-	color: #337ACC;
-}
 .tag-posts {
 	display: none;
 }
@@ -250,6 +244,10 @@ a:hover {
 }
 .tag {
 	margin-left: 2em;
+	cursor: pointer;
+}
+.tag:hover {
+	color: #337ACC;
 }
 .post-date {
 	margin-left: 1em;
