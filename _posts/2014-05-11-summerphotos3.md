@@ -2,7 +2,7 @@
 layout: gallery
 title: Summer Photos 3
 cover: team.jpg
-imgs: [team.jpg, arabesque.jpg, green.jpg, fly.jpg, flip.jpg]
+imgs: [team.jpg, arabesque.jpg, green.jpg, fly.jpg, groupflip.jpg, flip.jpg, kid.jpg]
 tags: [Photos, Yale, Summer, Parkour, Architecture]
 ---
 
