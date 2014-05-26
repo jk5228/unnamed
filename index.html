@@ -147,13 +147,17 @@
 			min-width: 100%;
 			color: white;
 			background-attachment: fixed;
-			background-image: url('imgs/vegas1.jpg');
+			background-image: url('imgs/me.jpg');
 			height: 100%;
 		}
 		#about-div p {
 			font-size: 1.2em !important;
 			text-align: justify;
 			width: 23%;
+		}
+		#about-content {
+			width: 50%;
+			float: right;
 		}
 		.contact-link {
 			color: #40AFFF;
@@ -438,19 +442,21 @@
 	</div>
 	<div class="content" id="about-div">
 		<p></p>
-		<h2 class="title" id="title5">About</h2>
-		<p>
-			There's not much to know about me, except that I'm not a robot. And I like coffee. And parkour.
-		</p>
-		<p>
-			I built this website from scratch (although I referenced Stack Exchange a lot for jQuery help). I opted for Jekyll on my end to make pushing new content easy while giving me lots of control over the site.
-		</p>
-		<p>
-			I took all the photos used on this site. You can use any of them with attribution.
-		</p>
-		<p>
-			You can reach me by <a class="contact-link" href="mailto:jason.kim@yale.edu">email</a>, <a class="contact-link" href="https://www.facebook.com/jason.kim.7902">Facebook</a>, or <a class="contact-link" href="http://www.linkedin.com/pub/jason-kim/51/1/a10?trk=pub-pbmap">LinkedIn</a>.
-		</p>
+		<div id="about-content">
+			<h2 class="title" id="title5">About</h2>
+			<p>
+				There's not much to know about me, except that I'm not a robot. And I like coffee. And parkour.
+			</p>
+			<p>
+				I built this website from scratch (although I referenced Stack Exchange a lot for jQuery help). I opted for Jekyll on my end to make pushing new content easy while giving me lots of control over the site.
+			</p>
+			<p>
+				I took all the photos used on this site. You can use any of them with attribution. Just include a link to this site!
+			</p>
+			<p>
+				You can reach me by <a class="contact-link" href="mailto:jason.kim@yale.edu">email</a>, <a class="contact-link" href="https://www.facebook.com/jason.kim.7902">Facebook</a>, or <a class="contact-link" href="http://www.linkedin.com/pub/jason-kim/51/1/a10?trk=pub-pbmap">LinkedIn</a>.
+			</p>
+		</div>
 	</div>
 </body>
 </html>
