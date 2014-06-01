@@ -179,148 +179,6 @@
 			font-weight: 500;
 		}
     </style>
-
-    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-    <script type="text/javascript">
-	    
-	    $(document).ready( function () {
-
-	    	// Sets postcontainer width to fit recent posts
-	    	var width = $('#recent-div .post').size();
-	    	$('#bar1').css('width', (width * 22 + 2) + 'em');
-
-	    	// Sets archivecontainer width to fit archived posts
-	    	var width = $('#archive-div .year').size();
-	    	$('#bar2').css('width', (width * 17 + 2) + 'em');
-
-	    	// Sets tagscontainer width to fit archived posts
-	    	var width = $('#tags-div .tag').size();
-	    	$('#bar3').css('width', (width * 17 + 2) + 'em');
-
-	    	// Reveals posts for a tag when tag name is clicked
-	    	$('.tag').click( function () {
-	    		$('.tag').css('color','white');
-	    		$(this).css('color','#40AFFF');
-	    		$(this).children().children().css('color','white');
-
-	    		var tag = $(this).attr('id').substr(5);
-	    		var state = $('#tag2-' + tag).css('display');
-
-	    		if (state == 'none') {
-		    		$.when( $(".tag-posts").css('display','none') ).then( $('#tag2-' + tag).fadeIn(300) );
-	    		}
-	    	});
-
-	    	// Prevent page scroll while hovering tags div
-    		$('.tags').bind('mousewheel DOMMouseScroll', function(e) {
-			    var scrollTo = null;
-
-			    if (e.type == 'mousewheel') {
-			        scrollTo = (e.originalEvent.wheelDelta * -1);
-			    }
-			    else if (e.type == 'DOMMouseScroll') {
-			        scrollTo = 40 * e.originalEvent.detail;
-			    }
-
-			    if (scrollTo) {
-			        e.preventDefault();
-			        $(this).scrollTop(scrollTo + $(this).scrollTop());
-			    }
-			});
-
-	  //   	// Prevents mouse scrolling
-	  //   	$('body, html').on({
-			// 'mousewheel': function(e, delta) {
-			//     if (e.target.id == 'el') return;
-   //    			var scrolled = $('#postcontainer').scrollLeft();
-   //    			$('#postcontainer').scrollLeft(scrolled - delta);
-			//     e.preventDefault();
-			//     e.stopPropagation();
-			//     }
-			// });
-
-			// // Disables arrow, return, and page up/down key presses
-			// var ar = new Array(13, 33, 34, 38, 40);
-			// var disableArrowKeys = function(e) {
-			//     if ($.inArray(e.keyCode, ar)>=0) {
-			//         e.preventDefault();
-			//         e.stopPropagation();
-			//     }
-			// }
-
-			// // Scrolls recent posts based on mouse position
-			// $(function(){
-
-			//     var $bl    = $("#postcontainer"),
-			//         $th    = $(".post"),
-			//         blW    = $bl.outerWidth(),
-			//         blSW   = $bl[0].scrollWidth,
-			//         wDiff  = (blSW/blW)-1,  // widths difference ratio
-			//         mPadd  = 60,  // Mousemove Padding
-			//         damp   = 20,  // Mousemove response softness
-			//         mX     = 20,   // Real mouse position
-			//         mX2    = 0,   // Modified mouse position
-			//         posX   = 0,
-			//         mmAA   = blW-(mPadd*2), // The mousemove available area
-			//         mmAAr  = (blW/mmAA);    // get available mousemove fidderence ratio
-
-			//     $bl.mousemove(function(e) {
-			//         mX = e.pageX - this.offsetLeft;
-			//         mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
-			//     });
-
-			//     setInterval(function(){
-			//         posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"    
-			//         $bl.scrollLeft(posX*wDiff);
-			//     }, 10);
-
-			// });
-
-			// // Scrolls archived posts based on mouse position
-			// $(function(){
-
-			//     var $bl    = $("#archivecontainer"),
-			//         $th    = $(".year"),
-			//         blW    = $bl.outerWidth(),
-			//         blSW   = $bl[0].scrollWidth,
-			//         wDiff  = (blSW/blW)-1,  // widths difference ratio
-			//         mPadd  = 60,  // Mousemove Padding
-			//         damp   = 20,  // Mousemove response softness
-			//         mX     = 20,   // Real mouse position
-			//         mX2    = 0,   // Modified mouse position
-			//         posX   = 0,
-			//         mmAA   = blW-(mPadd*2), // The mousemove available area
-			//         mmAAr  = (blW/mmAA);    // get available mousemove fidderence ratio
-
-			//     $bl.mousemove(function(e) {
-			//         mX = e.pageX - this.offsetLeft;
-			//         mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
-			//     });
-
-			//     setInterval(function(){
-			//         posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"    
-			//         $bl.scrollLeft(posX*wDiff);
-			//     }, 10);
-
-			// });
-
-			// $(document).keydown(disableArrowKeys);
-
-	    	$('a[href*=#]:not([href=#])').click(function() {
-			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			      var target = $(this.hash);
-			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			      if (target.length) {
-			        $('html,body').animate({
-			          scrollTop: target.offset().top
-			        }, 1000);
-			        return false;
-			      }
-			    }
-			  });
-	    });
-
-    </script>
 </head>
 <body>
 	<div class="navbar" id="nav1">
@@ -466,4 +324,145 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+    
+    $(document).ready( function () {
+
+    	// Sets postcontainer width to fit recent posts
+    	var width = $('#recent-div .post').size();
+    	$('#bar1').css('width', (width * 22 + 2) + 'em');
+
+    	// Sets archivecontainer width to fit archived posts
+    	var width = $('#archive-div .year').size();
+    	$('#bar2').css('width', (width * 17 + 2) + 'em');
+
+    	// Sets tagscontainer width to fit archived posts
+    	var width = $('#tags-div .tag').size();
+    	$('#bar3').css('width', (width * 17 + 2) + 'em');
+
+    	// Reveals posts for a tag when tag name is clicked
+    	$('.tag').click( function () {
+    		$('.tag').css('color','white');
+    		$(this).css('color','#40AFFF');
+    		$(this).children().children().css('color','white');
+
+    		var tag = $(this).attr('id').substr(5);
+    		var state = $('#tag2-' + tag).css('display');
+
+    		if (state == 'none') {
+	    		$.when( $(".tag-posts").css('display','none') ).then( $('#tag2-' + tag).fadeIn(300) );
+    		}
+    	});
+
+    	// Prevent page scroll while hovering tags div
+		$('.tags').bind('mousewheel DOMMouseScroll', function(e) {
+		    var scrollTo = null;
+
+		    if (e.type == 'mousewheel') {
+		        scrollTo = (e.originalEvent.wheelDelta * -1);
+		    }
+		    else if (e.type == 'DOMMouseScroll') {
+		        scrollTo = 40 * e.originalEvent.detail;
+		    }
+
+		    if (scrollTo) {
+		        e.preventDefault();
+		        $(this).scrollTop(scrollTo + $(this).scrollTop());
+		    }
+		});
+
+  //   	// Prevents mouse scrolling
+  //   	$('body, html').on({
+		// 'mousewheel': function(e, delta) {
+		//     if (e.target.id == 'el') return;
+//    			var scrolled = $('#postcontainer').scrollLeft();
+//    			$('#postcontainer').scrollLeft(scrolled - delta);
+		//     e.preventDefault();
+		//     e.stopPropagation();
+		//     }
+		// });
+
+		// // Disables arrow, return, and page up/down key presses
+		// var ar = new Array(13, 33, 34, 38, 40);
+		// var disableArrowKeys = function(e) {
+		//     if ($.inArray(e.keyCode, ar)>=0) {
+		//         e.preventDefault();
+		//         e.stopPropagation();
+		//     }
+		// }
+
+		// // Scrolls recent posts based on mouse position
+		// $(function(){
+
+		//     var $bl    = $("#postcontainer"),
+		//         $th    = $(".post"),
+		//         blW    = $bl.outerWidth(),
+		//         blSW   = $bl[0].scrollWidth,
+		//         wDiff  = (blSW/blW)-1,  // widths difference ratio
+		//         mPadd  = 60,  // Mousemove Padding
+		//         damp   = 20,  // Mousemove response softness
+		//         mX     = 20,   // Real mouse position
+		//         mX2    = 0,   // Modified mouse position
+		//         posX   = 0,
+		//         mmAA   = blW-(mPadd*2), // The mousemove available area
+		//         mmAAr  = (blW/mmAA);    // get available mousemove fidderence ratio
+
+		//     $bl.mousemove(function(e) {
+		//         mX = e.pageX - this.offsetLeft;
+		//         mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
+		//     });
+
+		//     setInterval(function(){
+		//         posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"    
+		//         $bl.scrollLeft(posX*wDiff);
+		//     }, 10);
+
+		// });
+
+		// // Scrolls archived posts based on mouse position
+		// $(function(){
+
+		//     var $bl    = $("#archivecontainer"),
+		//         $th    = $(".year"),
+		//         blW    = $bl.outerWidth(),
+		//         blSW   = $bl[0].scrollWidth,
+		//         wDiff  = (blSW/blW)-1,  // widths difference ratio
+		//         mPadd  = 60,  // Mousemove Padding
+		//         damp   = 20,  // Mousemove response softness
+		//         mX     = 20,   // Real mouse position
+		//         mX2    = 0,   // Modified mouse position
+		//         posX   = 0,
+		//         mmAA   = blW-(mPadd*2), // The mousemove available area
+		//         mmAAr  = (blW/mmAA);    // get available mousemove fidderence ratio
+
+		//     $bl.mousemove(function(e) {
+		//         mX = e.pageX - this.offsetLeft;
+		//         mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
+		//     });
+
+		//     setInterval(function(){
+		//         posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"    
+		//         $bl.scrollLeft(posX*wDiff);
+		//     }, 10);
+
+		// });
+
+		// $(document).keydown(disableArrowKeys);
+
+    	$('a[href*=#]:not([href=#])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		        return false;
+		      }
+		    }
+		  });
+    });
+
+</script>
 </html>
